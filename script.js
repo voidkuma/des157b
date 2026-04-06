@@ -15,6 +15,7 @@
             bannerItem.setAttribute('src', 'images/horse.png');
             classInfo.className = 'switch';
             myName.className = 'switch';
+            myName.innerHTML = 'Home is.. the trail';
             body.className = 'switch';
             banner.className = 'switch';
             button.className = 'switch';
@@ -25,6 +26,7 @@
         } else {
             
             bannerItem.setAttribute('src', 'images/pirateShip.png');
+            myName.innerHTML = 'Home is.. the tide';
             classInfo.removeAttribute('class');
             myName.removeAttribute('class');
             body.removeAttribute('class');

@@ -142,15 +142,15 @@ header {
 
 /* Page styling */
 body {
-    background-color: #171717;
+    background-color: #1d1a1f;
     color: rgb(235, 235, 235);
     transition: all 2s;
     line-height: 1;
 }
 
 body.switch {
-    background-color: #714B30;
-    color: #333;
+    background-color: #815a3e;
+    color: #ffffff;
 }
 
 main {
@@ -201,11 +201,11 @@ section a:hover {
 }
 
 section.switch a {
-    color: #333;
+    color: #ffffff;
 }
 
 section.switch a:hover {
-    background-color: #333;
+    background-color: #A4C0C8;
     color: rgb(235, 235, 235);
 }
 
