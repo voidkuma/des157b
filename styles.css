@@ -123,7 +123,7 @@ header {
 }
 
 #movingItem{
-    animation: slide 8s ease-in-out infinite alternate;
+    animation: slide 5s ease-in-out infinite alternate;
     padding-left: 50px;
 }
 
@@ -132,7 +132,7 @@ header {
     transform: translateX(0);
   }
   to {
-    transform: translateX(100px); /* Adjust distance as needed */
+    transform: translateX(90px); /* Adjust distance as needed */
   }
 }
 
@@ -167,6 +167,14 @@ main section {
     padding: 1em;
 }
 
+#card-front{
+    color: white;
+    font-family: "Inria Serif", serif;
+    border-radius: 8px;
+    /* border-style: solid; */
+    /* border-color: white; */
+}
+
 a {
     text-decoration: none;
 }
@@ -177,13 +185,6 @@ nav ol, nav ul {
     padding-left: 0;
 }
 
-.card {
-    border-radius: 8px;
-    background: linear-gradient(#FFF3DA,#93949E);
-    color: black;
-    font-family: "Inria Serif", serif;
-}
-
 section li {
     padding-left: 1.2em;
 }
@@ -192,7 +193,7 @@ section a {
     line-height: 1em;
     display: inline-block;
     padding: .5em;
-    color: rgb(255, 255, 255);
+    color: white;
 }
 
 section a:hover {
