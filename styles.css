@@ -67,13 +67,12 @@ img {
     /* make sure the columns don't get too small and text stays readable */
     min-width: 900px;
     margin: 1em auto;
-    padding-top: 2em;
+    padding-top: 1em;
 }
 
 header { 
     display: flex;
     flex-direction: column;
-    gap: 3px;
     font-family: "Inria Serif", serif;
     justify-content: space-between;
   width: 1100px;
@@ -157,22 +156,36 @@ main {
     display: flex;
     justify-content: space-evenly;
     margin: 1em auto;
-    gap: 32px;
+    gap: 10px;
+    padding-left: 75px;
+    padding-right: 75px;
 }
 
 main section {
-    /* flex: 1; */
-    /* border: 1px rgb(235, 235, 235) dashed; */
+    flex: 1;
     margin: 0 .25em;
-    padding: 1em;
+    padding: .5em;
+    /* background-color: #575d7b2e; */
+    background: linear-gradient(#5a4ea62e, #575d7b2e);
+    color: white;
+    text-align: center;
+    height: fit-content;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
 }
 
-#card-front{
-    color: white;
-    font-family: "Inria Serif", serif;
-    border-radius: 8px;
-    /* border-style: solid; */
-    /* border-color: white; */
+section:hover{
+    background-color: #747b9a2e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-0.2px) scale(1.02);
+}
+
+section h3{
+    font-family: "IM Fell English", serif;
+}
+
+section nav{
+    text-align: justify;
 }
 
 a {
@@ -201,14 +214,26 @@ section a:hover {
     color: #354673;
 }
 
+section.switch{
+    
+    background: linear-gradient(rgba(218, 255, 250, 0.683), #ffffffb4);
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: rgb(46 42 40);
+}
+
 section.switch a {
-    color: #ffffff;
+    color: rgb(46 42 40);
 }
 
 section.switch a:hover {
     background-color: #A4C0C8;
     color: rgb(235, 235, 235);
 }
+
+
 
 button {
     position: absolute;
