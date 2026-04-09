@@ -177,7 +177,7 @@ main section {
 section:hover{
     background-color: #747b9a2e;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform: translateY(-0.2px) scale(1.02);
+    transform: translateY(-0.05px) scale(1.02);
 }
 
 section h3{
