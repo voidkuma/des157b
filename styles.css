@@ -216,12 +216,16 @@ section a:hover {
 
 section.switch{
     
-    background: linear-gradient(rgba(218, 255, 250, 0.683), #ffffffb4);
+    background: linear-gradient(rgba(218, 255, 250, 0.751), #ffffffc1);
     border-bottom-right-radius: 50px;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 4px;
     border-top-right-radius: 4px;
     color: rgb(46 42 40);
+}
+
+section.switch:hover{
+    background: linear-gradient(rgb(218, 255, 250), #ffffff);
 }
 
 section.switch a {
