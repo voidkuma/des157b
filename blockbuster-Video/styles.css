@@ -1,0 +1,50 @@
+body {
+    background-color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: antiquewhite;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    /* opacity: 0%; */
+}
+
+#poem p {
+    position: absolute;
+    padding: 1em;
+    font-size: 2em;
+    background-color: black;
+    transition: all 2.5s;
+}
+
+#line1 {
+    top: 15%;
+    left: 15%;
+}
+
+#line2 {
+    top: 40%;
+    left: 43%;
+}
+
+#line3 {
+    bottom: 15%;
+    left: 75%;
+}
+
+#line4 {
+    bottom: 30%;
+    left: 30%;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.showing {
+    opacity: 1;
+}
