@@ -14,6 +14,12 @@
                 line: [line1, line2, line3, line4]
             }
 
+
+            const loading = document.querySelector('.fa-cloud-rain');
+            myVideo.addEventListener('playing', function() {
+                loading.style.display = 'none';
+            })
+
             const intervalID = setInterval(checkTime, 1000);
 
             function checkTime() {

@@ -32,6 +32,30 @@ header{
     margin: auto;
 }
 
+.fa-cloud-rain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 36px;
+    color: antiquewhite;
+    transform: translate(-50%, -50%);
+    animation: rain 2s infinite alternate ease-in-out;
+}
+
+@keyframes rain {
+0% {
+    opacity: .5;
+    transform: scale(1);
+}
+50% {
+    opacity: 1;
+}
+100% {
+    opacity: .5;
+    transform: scale(1.5);
+}
+}
+
 #video-container{
     position: relative;
     display: flex;
@@ -102,7 +126,7 @@ header{
 
 #line1 {
     top: 15%;
-    left: 15%;
+    left: 20%;
 }
 
 #line2 {
@@ -112,7 +136,7 @@ header{
 
 #line3 {
     bottom: 15%;
-    left: 75%;
+    left: 68%;
 }
 
 #line4 {
