@@ -1,24 +1,103 @@
+.dawning-of-a-new-day-regular {
+  font-family: "Dawning of a New Day", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#container{		
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 1200px; /* or desired width */
+    margin: 0 auto;
+    gap: 20px;
+}
+
 body {
-    background-color: white;
+    background-color: #F0EEE7;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: antiquewhite;
+    color: black;
+}
+
+header{
+    font-family: "Dawning of a New Day";
+    margin: auto;
+}
+
+#video-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 #myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    /* opacity: 0%; */
+
+    /* max-width: 1200px;
+    max-height: 750px; */
+    width: 70%;
+    border-radius: 8px;
+    filter: none;
+}
+
+#myVideo.FS{
+    max-width: 1200px;
+    max-height: 750px;
+    width: 100%;
+
+    object-fit: cover;
+    
+}
+
+#myVideo.paused{
+    filter: grayscale();
 }
 
 #poem p {
     position: absolute;
     padding: 1em;
-    font-size: 2em;
+    font-size: 1.5em;
     background-color: black;
-    transition: all 2.5s;
+    color: white;
+    border-width: 1px;
+    border-style: inset;
+    border-color: transparent;
+
+}
+
+#poem p:hover{
+    color: black;
+    background-color: white;
+    border-style: inset;
+    border-color: black;
+}
+
+#duck-container{
+    position: absolute;
+    bottom: 40%;
+    left: 30%;
+}
+
+#duck{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    cursor: pointer;
+}
+
+#duck:hover{
+    color: rgb(134, 134, 134);
+}
+
+#duckIMG{
+    width: 300px;
 }
 
 #line1 {
@@ -47,4 +126,16 @@ body {
 
 .showing {
     opacity: 1;
+}
+
+.fa-expand {
+    position: relative;
+    top: 10px;
+    right: 60px;
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+}
+
+.fa-expand:hover{
+    color: rgb(198, 197, 197);
 }

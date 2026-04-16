@@ -6,11 +6,12 @@
             const line1 = document.querySelector('#line1');
             const line2 = document.querySelector('#line2');
             const line3 = document.querySelector('#line3');
+            const line4 = document.querySelector('#line4');
 
             const poem = {
-                start: [0, 5, 8],
-                stop: [4, 7, 10],
-                line: [line1, line2, line3]
+                start: [0, 1, 2, 5],
+                stop: [4, 4, 4, 11],
+                line: [line1, line2, line3, line4]
             }
 
             const intervalID = setInterval(checkTime, 1000);
@@ -33,5 +34,46 @@
                 } else {
                     poem.line[2].className = "hidden";
                 }
+                if (poem.start[3] < myVideo.currentTime && myVideo.currentTime < poem.stop[3]) {
+                    poem.line[3].className = "showing";
+                } else {
+                    poem.line[3].className = "hidden";
+                }
             }
+
+            const fullScreen = document.querySelector('.fa-expand');
+
+            fullScreen.addEventListener('click', function() {
+                // The fullscreenElement attribute returns null if the element is in windowed mode
+                if (!document.fullscreenElement) {
+                    myVideo.className = 'FS';
+                    // document.documentElement returns the Element that is a direct child of the document, the <html> element
+                    document.documentElement.requestFullscreen();
+                } else {
+                    document.exitFullscreen();
+                    myVideo.removeAttribute('class');
+
+                }
+            });
+
+            const duckBtn = document.querySelector('#duck');
+            const duckDisplay = document.querySelector('#duckIMG');
+            let playing = true;
+
+            duckBtn.addEventListener('click', function(){
+                if (!playing){
+                    myVideo.play();
+                    playing = true;
+                    myVideo.removeAttribute('class');
+                    duckBtn.innerHTML = '(click for a duck break)';
+                    duckDisplay.className = 'hidden';
+                } else {
+                    myVideo.pause();
+                    playing = false;
+                    duckDisplay.className = 'showing';
+                    myVideo.className = 'paused';
+                    duckBtn.innerHTML = '(click for no more duck)';
+
+                }
+            });
 })();
