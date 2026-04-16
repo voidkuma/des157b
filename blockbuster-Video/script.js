@@ -47,10 +47,12 @@
                 // The fullscreenElement attribute returns null if the element is in windowed mode
                 if (!document.fullscreenElement) {
                     myVideo.className = 'FS';
+                    duckBtn.className = 'hidden';
                     // document.documentElement returns the Element that is a direct child of the document, the <html> element
                     document.documentElement.requestFullscreen();
                 } else {
                     document.exitFullscreen();
+                    duckBtn.removeAttribute('class');
                     myVideo.removeAttribute('class');
 
                 }
@@ -67,12 +69,14 @@
                     myVideo.removeAttribute('class');
                     duckBtn.innerHTML = '(click for a duck break)';
                     duckDisplay.className = 'hidden';
+                    // fullScreen.removeAttribute('class');
                 } else {
                     myVideo.pause();
                     playing = false;
                     duckDisplay.className = 'showing';
                     myVideo.className = 'paused';
                     duckBtn.innerHTML = '(click for no more duck)';
+                    // fullScreen.className = 'hidden';
 
                 }
             });
