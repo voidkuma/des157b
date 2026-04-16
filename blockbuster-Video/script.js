@@ -54,14 +54,12 @@
             fullScreen.addEventListener('click', function() {
                 // The fullscreenElement attribute returns null if the element is in windowed mode
                 if (!document.fullscreenElement) {
-                    myVideo.className = 'FS';
-                    duckBtn.className = 'hidden';
+                    myVideo.classList.add('FS');
                     // document.documentElement returns the Element that is a direct child of the document, the <html> element
                     document.documentElement.requestFullscreen();
                 } else {
                     document.exitFullscreen();
-                    duckBtn.removeAttribute('class');
-                    myVideo.removeAttribute('class');
+                    myVideo.classList.remove('FS');
 
                 }
             });
@@ -73,15 +71,19 @@
                 if (!playing){
                     myVideo.play();
                     playing = true;
-                    myVideo.removeAttribute('class');
                     duckBtn.innerHTML = '(click for a duck break)';
-                    duckDisplay.className = 'hidden';
+                    // duckDisplay.className = 'hidden';
+                    duckDisplay.classList.add('hidden');
+                    duckDisplay.classList.remove('showing');
+
+                    myVideo.classList.remove('paused');
                     // fullScreen.removeAttribute('class');
                 } else {
                     myVideo.pause();
                     playing = false;
-                    duckDisplay.className = 'showing';
-                    myVideo.className = 'paused';
+                    duckDisplay.classList.add('showing');
+                    duckDisplay.classList.remove('hidden');
+                    myVideo.classList.add('paused');
                     duckBtn.innerHTML = '(click for no more duck)';
                     // fullScreen.className = 'hidden';
 

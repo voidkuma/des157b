@@ -80,6 +80,10 @@ header{
     
 }
 
+#myVideo.FS.paused{
+    filter: grayscale();
+}
+
 #myVideo.paused{
     filter: grayscale();
 }
