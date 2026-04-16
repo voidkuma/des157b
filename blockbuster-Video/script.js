@@ -16,9 +16,10 @@
 
 
             const loading = document.querySelector('.fa-cloud-rain');
-                myVideo.addEventListener('playing', function() {
+
+            myVideo.addEventListener('playing', function() {
                     loading.style.display = 'none';
-            })
+            });
 
             const intervalID = setInterval(checkTime, 1000);
 
@@ -48,6 +49,7 @@
             }
 
             const fullScreen = document.querySelector('.fa-expand');
+            const duckBtn = document.querySelector('#duck');
 
             fullScreen.addEventListener('click', function() {
                 // The fullscreenElement attribute returns null if the element is in windowed mode
@@ -64,7 +66,6 @@
                 }
             });
 
-            const duckBtn = document.querySelector('#duck');
             const duckDisplay = document.querySelector('#duckIMG');
             let playing = true;
 
