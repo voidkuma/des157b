@@ -8,13 +8,14 @@
             const line3 = document.querySelector('#line3');
             const line4 = document.querySelector('#line4');
 
+            // keeps track of the lines of poem and when they start to appear
             const poem = {
                 start: [0, 1, 2, 4],
                 stop: [3, 3, 3, 11],
                 line: [line1, line2, line3, line4]
             }
 
-
+            // the loading element, later used to load when video isn't playing
             const loading = document.querySelector('.fa-cloud-rain');
 
             myVideo.addEventListener('playing', function() {
@@ -23,6 +24,7 @@
 
             const intervalID = setInterval(checkTime, 1000);
 
+            // checks the time of the video to accurately reflect the poem lines
             function checkTime() {
                 console.log(parseInt(myVideo.currentTime));
 
@@ -48,9 +50,11 @@
                 }
             }
 
+            // variables for the expand btn and duck btn to be used in following functions
             const fullScreen = document.querySelector('.fa-expand');
             const duckBtn = document.querySelector('#duck');
 
+            // everytime the FS btn pressed the document goes fullscreen
             fullScreen.addEventListener('click', function() {
                 // The fullscreenElement attribute returns null if the element is in windowed mode
                 if (!document.fullscreenElement) {
@@ -64,9 +68,11 @@
                 }
             });
 
+            // duckDisplay is the overlay image of the duck
             const duckDisplay = document.querySelector('#duckIMG');
             let playing = true;
 
+            // when duck break btn is pressed the overlay shows up with a b&w filter
             duckBtn.addEventListener('click', function(){
                 if (!playing){
                     myVideo.play();
