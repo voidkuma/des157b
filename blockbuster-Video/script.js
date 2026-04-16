@@ -9,15 +9,15 @@
             const line4 = document.querySelector('#line4');
 
             const poem = {
-                start: [0, 1, 2, 5],
-                stop: [4, 4, 4, 11],
+                start: [0, 1, 2, 4],
+                stop: [3, 3, 3, 11],
                 line: [line1, line2, line3, line4]
             }
 
 
             const loading = document.querySelector('.fa-cloud-rain');
-            myVideo.addEventListener('playing', function() {
-                loading.style.display = 'none';
+                myVideo.addEventListener('playing', function() {
+                    loading.style.display = 'none';
             })
 
             const intervalID = setInterval(checkTime, 1000);
