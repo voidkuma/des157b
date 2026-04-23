@@ -1,0 +1,165 @@
+#container{
+width: 100%;
+    max-width: 1200px;
+    max-height: 750px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    margin: auto;
+}
+
+main{
+display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+body{
+    background-color: #2C2C2C;
+    background-image: radial-gradient(#ffffff17 2px, transparent 2px); /* Gives the grid pattern*/
+    background-size: 20px 20px; /* spacing between dots */
+    margin: 28px;
+
+}
+
+header{
+    background-color: #E5E2C5;
+    font-family: 'Spectral SC';
+    width: fit-content;
+    padding: 20px 28px;
+    font-size: 28px;
+    transform: rotate(-1deg);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 56px;
+    rotate: -2deg;
+}
+
+header:hover{
+    transform: translateY(-10px) scale(1.02);
+    transition: transform 0.3s ease;
+    rotate: -4deg;
+}
+
+header img{
+    height: 40px;
+}
+
+#dateData{
+    background-image: url("images/stickyNote.png");
+    background-size: cover;
+    font-family: 'Jacques Francois';
+    aspect-ratio: 0.89 / 1;
+    width: 300px;
+    padding: 28px;
+    transform: rotate(-3deg);
+}
+
+#dateData:hover{
+    transform: translateY(-15px) scale(1.02);
+    transition: transform 0.3s ease;
+    rotate: -4deg;
+}
+
+#dateData h2{
+    margin: 0;
+}
+
+#dateData h3, p{
+    color: #3C467F;
+}
+
+#photoGif-container{
+    position: relative;
+}
+
+#gif{
+    background-color: #D7E5C5;
+    position: absolute;
+    z-index: 1;
+    left: 268px;
+    bottom: 385px;
+    padding: 10px;
+}
+
+#gif:hover{
+    transform: translateY(-15px) scale(1.02);
+    transition: transform 0.3s ease;
+    rotate: -4deg;
+}
+
+#gif img{
+    width: 100px;
+}
+
+#polaroid{
+    background-color: white;
+    text-align: center;
+    padding: 30px;
+    aspect-ratio: 0.83 / 1;
+    rotate: 5deg;
+    box-shadow: 0px 3.8px 3.8px rgb(0, 0, 0, 0.25);
+    transform: translateY(-50px) scale(1.2);
+}
+
+#polaroid:hover{
+    transform: translateY(-51px) scale(1.22);
+    transition: transform 0.3s ease;
+    rotate: 6deg;
+}
+
+#polaroid h2{
+    font-family: 'Shadows Into Light';
+    margin: 0;
+    padding-top: 8px;
+}
+
+#catIMG{
+    background-image: url("images/day1.png");
+    height: 280px;
+    background-size: cover; /* makes it so the image fits within the div nicely */
+    box-shadow: inset 0px 3.8px 3.8px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Layout Container */
+.pagination-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: serif;
+    width: fit-content;
+    padding-bottom: 20px;
+}
+
+/* Arrow Buttons */
+.arrow {
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Group of Squares */
+.indicator-group {
+  display: flex;
+  gap: 8px; /* Space between squares */
+}
+
+/* Individual Square */
+.square {
+  width: 15px;
+  height: 15px;
+  background-color: #d9d9d9; /* Light grey */
+  border: 1px solid #4a5a8a; /* Darker blue/grey border */
+}
+
+/* The Active (Black) Square */
+.square.active {
+  background-color: #000;
+  border-color: #000;
+}
