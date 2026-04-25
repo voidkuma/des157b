@@ -10,14 +10,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Shadows+Into+Light&family=Spectral+SC:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
+    
     <!-- My Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link href="styles.css" rel="stylesheet">
+
+    <!-- My Script -->
+    <script src="script.js" defer></script>
 
 </head>
 <body>
     <div id="container">
 
-        <header><img src="images/catIcon.png" alt="cat icon">A Week Of Cat Photos</header>
+        <header><i class="fa-solid fa-cat"></i>A Week Of Cat Photos</header>
         <main>
             <section id="dateData">
                 <div class="pagination-container">
@@ -36,16 +41,16 @@
 
                     <button class="arrow right">&gt;</button>
                 </div>
-                <h2>Monday <br> 9 Photos Taken,</h2>
+                <h2 id="dateHeader">Monday <br> 9 Photos Taken,</h2>
                 <p>[Notes]</p>
-                <p>They were cute as always. No notes here, except for love n kisses. Muahahahha!</p>
+                <p id="dateNotes">They were cute as always. No notes here, except for love n kisses. Muahahahha!</p>
             </section>
 
             <div id="photoGif-container">
-                <div id="gif"><img src="images/cat.gif"></div>
+                <div id="gif"><img src="images/cat.gif" alt="gif of cat drawing"></div>
                 <section id="polaroid">
-                    <div id="catIMG"></div>
-                    <h2>*Babies enjoying the sun*</h2>
+                    <img id="catIMG" src="images/day1.webp" alt="photo of my cat">    
+                    <h2 id="IMGnote">*Babies enjoying the sun*</h2>
 
                 </section>
             </div>
@@ -53,7 +58,7 @@
 
 
         </main>
-
+        <div id="custom-cursor"></div>
     </div>
 </body>
 </html>

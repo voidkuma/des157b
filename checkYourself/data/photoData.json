@@ -1,0 +1,50 @@
+{
+    "Monday" : {
+        "photos": 9,
+        "description": "They were cute as always. No notes here, except for love n kisses. Muahahahha!",
+        "image": "images/day1.webp",
+        "title" : "*Babies enjoying the sun*"
+    },
+    "Tuesday" : {
+        "photos": 4,
+        "description": "She was in a very playful mood today. I did give her a treat after this.",
+        "image": "images/day2.webp",
+        "title" : "*Aurora being cute*"
+    },
+    "Wednesday" : {
+        "photos": 3,
+        "description": "She loves her carpet! It has her face on it. I wonder if she knows that I love her.",
+        "image": "images/day3.webp",
+        "title" : "*Aurora being fat n cute*"
+    },
+    "Thursday" : {
+        "photos": 2,
+        "description": "She was very lazy this day. She's still unemployed.. maybe I should charge her rent.",
+        "image": "images/day4.webp",
+        "title" : "*Baby being so sleepy*"
+    },
+    "Friday" : {
+        "photos": 10,
+        "description": "I don't really like mochi and he doesn't really like me. I wonder why.",
+        "image": "images/day5.webp",
+        "title" : "*Mochi being depressed*"
+    },
+    "Saturday" : {
+        "photos": 1,
+        "description": "Nebula loves waiting outside of the shower for me. This is my POV, shes so cute.",
+        "image": "images/day6.webp",
+        "title" : "*Nebs just being nebs*"
+    },
+    "Sunday" : {
+        "photos": 2,
+        "description": "Every night they join me in bed. I wonder if they join because they like my bed or like me.",
+        "image": "images/day7.webp",
+        "title" : "*Ready for bedtime!*"
+    },
+    "Final" : {
+        "photos": 31,
+        "description": "Ngl, every week my camera rolls gets bigger. But so does my love for my children.",
+        "image": "images/day8.webp",
+        "title" : "*My cute ugly baby*"
+    }
+}
