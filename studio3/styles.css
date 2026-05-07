@@ -1,0 +1,33 @@
+#container{
+    font-family: "Cutive Mono";
+    height: 100vh;
+}
+
+.scene{
+    width: 100vw; 
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img{
+    width: 350px;
+}
+
+#scene1, #scene2, #scene3{
+    background-color: black;
+    color: white;
+}
+
+footer{
+    text-align: center;
+    padding: 10px;
+}
+
+footer a{
+    color: rgb(171, 4, 4);
+    text-decoration: none;
+}
