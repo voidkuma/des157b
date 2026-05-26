@@ -41,8 +41,18 @@ nav a{
     line-height: 0px;
 }
 
+#startBtn{
+
+}
+
+#startBtn:hover{
+    color: grey;
+    cursor: pointer;
+}
+
 #flowerIMG1{
-    background-color: grey;
+    background-image: url(images/flower1.png);
+    background-position: center;
     width: 200px;
     height: 300px;
 
@@ -52,7 +62,8 @@ nav a{
 }
 
 #flowerIMG2{
-    background-color: rgb(83, 81, 81);
+    background-image: url(images/flower2.png);
+    background-position: center;
     width: 200px;
     height: 300px;
         position: absolute;
@@ -61,7 +72,8 @@ nav a{
 }
 
 #flowerIMG3{
-    background-color: rgb(138, 119, 119);
+    background-image: url(images/flower3.png);
+    background-position: center;
     width: 200px;
     height: 300px;
 
@@ -71,7 +83,8 @@ nav a{
 }
 
 #flowerIMG4{
-    background-color: rgb(64, 54, 54);
+    background-image: url(images/flower4.png);
+    background-position: center;
     width: 200px;
     height: 300px;
 
