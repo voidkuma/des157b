@@ -64,10 +64,18 @@ nav a{
     background-color: rgb(138, 119, 119);
     width: 200px;
     height: 300px;
+
+    position: absolute;
+    top: 30px;
+    right: 190px;
 }
 
 #flowerIMG4{
     background-color: rgb(64, 54, 54);
     width: 200px;
     height: 300px;
+
+    position: absolute;
+    top: 190px;
+    right: 20px;
 }
