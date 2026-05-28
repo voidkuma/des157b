@@ -4,12 +4,20 @@ main{
 
 }
 
-.showing{
+.showing {
     opacity: 100%;
 }
 
+#question1.showing {
+    display: flex;
+}
+
+#reflectScene1.showing {
+    display: flex;
+}
+
 .hidden{
-    display: none;
+    display: none !important;
 }
 
 .openingScene{
@@ -91,4 +99,117 @@ nav a{
     position: absolute;
     top: 190px;
     right: 20px;
+}
+
+
+/* This is for the question page #1 */
+
+#question1{
+    width: 100%;
+    max-width: 1200px; 
+    margin: 4% auto;
+    height: 750px;
+    display: flex;
+    flex-direction: column; 
+
+    align-items: center;
+    text-align: center;
+
+    gap: 24px;
+}
+
+#progressBar{
+    display: flex;
+    gap: 16px;
+}
+
+#progressBar div{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 500px;
+    border-style: solid;
+    border-color: #238CC1;
+}
+
+#progressBar div.active{
+   background-color: #C4D9D4; 
+}
+
+#MCQ{
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+#MCQ button{
+    width: 398px;
+    height: 50px;
+    border-radius: 48px;
+    background-color: #238CC1;
+    color: white;
+    border-style: none;
+}
+
+#MCQ button:hover{
+    background-color: #3fa2d4;
+    cursor: pointer;
+}
+
+/* This is for the reflection page #1 */
+
+
+#reflectScene1{
+    width: 100%;
+    max-width: 1200px; 
+    margin: 4% auto;
+    height: 750px;
+    /* display: flex; */
+    flex-direction: column; 
+
+    align-items: center;
+    text-align: center;
+
+    gap: 24px;   
+}
+
+#reflectionGIF{
+    width: 298px;
+    height: 298px;
+    background-color: grey;
+}
+
+#reflectScene1 button{
+    background-color: #024466;
+    height: 49px;
+    width: 398px;
+    color: white;
+    border-radius: 48px;
+}
+
+#reflectScene1 button:hover{
+    background-color: #0e618a;
+}
+
+/* This is for the question page #2 */
+
+#question2{
+    width: 100%;
+    max-width: 1200px; 
+    margin: 4% auto;
+    height: 750px;
+    display: flex;
+    flex-direction: column; 
+
+    align-items: center;
+    text-align: center;
+
+    gap: 24px;
+}
+
+#answer2{
+    width: 478px;
+    height: 44px;
+    border-color: #D9D9D9;
+    border-radius: 16px;
 }

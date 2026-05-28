@@ -15,7 +15,7 @@
 
     <main>
 
-        <div id="openingScene" class="showing">
+        <div id="openingScene" class="hidden">
             <nav>
                 <a href="#">[About]</a>
                 <a href="#">[Playground]</a>
@@ -45,22 +45,94 @@
 
         </div>
 
-        <div id="question1" class="hidden">
-            <h1>Question #1</h1>
-            <h2>On average how many hours do you think you spend on your phone per day?</h2>
+        <!-- Question scenes -->
 
-            <div>
-                <button>1-2hrs</button>
-                <button>3-4hrs</button>
-                <button>5-7hrs</button>
-                <button>Too many!</button>
+        <div id="question1" class="hidden">
+            <div id="progressBar">
+                <div id="dot" class="active"></div>
+                <div id="dot"></div>
+                <div id="dot"></div>
+            </div>
+
+            <section id="question">
+                <h1>Question #1</h1>
+                <h2>On average how many hours do you think you spend on your phone per day?</h2>
+            </section>
+
+            <div id="MCQ">
+                <button id="option1">1-2hrs</button>
+                <button id="option2">3-4hrs</button>
+                <button id="option3">5-7hrs</button>
+                <button id="option4">Too many!</button>
             </div>
 
         </div>
 
-        <div class="reflectScene1" >
+        <div id="question2" class="showing">
+            <div id="progressBar">
+                <div id="dot" class="active"></div>
+                <div id="dot" class="active"></div>
+                <div id="dot"></div>
+            </div>
 
-            
+            <section id="question">
+                <h1>Question #2</h1>
+                <h2>What's something you would want to change about your phone usage?</h2>
+            </section>
+
+            <div id="freeResponse">
+                <input type="text" id="answer2" name="phoneUsuage" placeholder="type response here" >
+            </div>
+
+        </div>
+
+        <div id="question3" class="hidden">
+            <div id="progressBar">
+                <div id="dot" class="active"></div>
+                <div id="dot" class="active"></div>
+                <div id="dot" class="active"></div>
+            </div>
+
+            <section id="question">
+                <h1>Question #3</h1>
+                <h2>What’s something positive that comes from your phone usage?</h2>
+            </section>
+
+            <div id="freeResponse">
+                <input type="text" id="answer3" name="phoneActivity" placeholder="type response here" >
+            </div>
+
+        </div>
+
+        <!-- reflection scenes -->
+
+        <div id="reflectScene1" class="hidden">
+
+            <h1>Did you know?</h1>
+            <div id="reflectionGIF">[gif]</div>
+
+            <h2>On average people spend around 5-6 hours a day on their phone</h2>
+            <button>Continue -></button>
+
+        </div>
+
+        <div id="reflectScene2" class="hidden">
+
+            <h1>Did you know?</h1>
+            <div id="reflectionGIF">[gif]</div>
+
+            <h2>The average American unlocks their phone 150 to 186 times a day and spends over 4 hours on it daily</h2>
+            <button>Continue -></button>
+
+        </div>
+
+        <div id="reflectScene3" class="hidden">
+
+            <h1>Did you know?</h1>
+            <div id="reflectionGIF">[gif]</div>
+
+            <h2>A highly positive benefit most people get from daily phone usage is the ability to instantly connect with loved ones, which fosters stronger social bonds and reduces feelings of isolation, regardless of physical distance.</h2>
+            <button>Continue -></button>
 
         </div>
 

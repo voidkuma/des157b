@@ -13,4 +13,18 @@
 
     })
 
+    // logic behind user pressing first question answer to lead to next question
+
+    const btns = document.querySelectorAll('#MCQ button');
+    const reflection1 = document.querySelector('#reflectScene1');
+
+    btns.forEach(function(btn){
+        btn.addEventListener('click', function(){
+            question1.className = 'hidden';
+            reflection1.className = 'showing';
+        })
+    })
+
+
+
 })();
