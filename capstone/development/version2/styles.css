@@ -1,6 +1,12 @@
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
 main{
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
 }
 
@@ -20,34 +26,67 @@ main{
     display: none !important;
 }
 
-.openingScene{
 
+/* First scene, the opening scene */
+
+#openingScene {
+  background-color: black;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;   /* stack nav + content vertically */
 }
 
 nav{
-    width: 100%;
+
     display: flex;
     justify-content: space-between;
+    padding: 20px;
 }
 
 nav a{
     text-decoration: none;
-    color: black;
+    color: #FFF;
+    font-family: "Martian Mono";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-#content{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+/* Header and h2 */
+#content {
+  width: 100%;
+  flex: 1;                  /* take up remaining space after nav */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  /* remove height: 100vh */
 }
 
-.openingScene section{
-    line-height: 0px;
+#content h1{
+    margin: 0px;
+    color: #FFF;
+    font-family: Barrio;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
+
+#content h4{
+    color: rgba(255, 255, 255, 0.80);
+    text-align: center;
+    font-family: "Ubuntu Mono";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+}
+
 
 #startBtn{
 
@@ -61,8 +100,10 @@ nav a{
 #flowerIMG1{
     background-image: url(images/flower1.png);
     background-position: center;
-    width: 200px;
-    height: 300px;
+    width: 405px;
+    height: 228px;
+    transform: rotate(-24.279deg);
+    border-radius: 50%;
 
         position: absolute;
     top: 50px;
@@ -72,8 +113,10 @@ nav a{
 #flowerIMG2{
     background-image: url(images/flower2.png);
     background-position: center;
-    width: 200px;
-    height: 300px;
+    width: 272.735px;
+    height: 179.299px;
+    transform: rotate(-131.997deg);
+    border-radius: 50%;
         position: absolute;
     bottom: 20px;
     left: 200px;
@@ -82,8 +125,10 @@ nav a{
 #flowerIMG3{
     background-image: url(images/flower3.png);
     background-position: center;
-    width: 200px;
-    height: 300px;
+    width: 272.735px;
+    height: 179.299px;
+    transform: rotate(-131.997deg);
+    border-radius: 50%;
 
     position: absolute;
     top: 30px;
@@ -93,48 +138,92 @@ nav a{
 #flowerIMG4{
     background-image: url(images/flower4.png);
     background-position: center;
-    width: 200px;
-    height: 300px;
+    width: 272.735px;
+    height: 179.299px;
+    transform: rotate(-43.513deg);
+    border-radius: 50%;
 
     position: absolute;
-    top: 190px;
+    top: 400px;
     right: 20px;
 }
 
+/* questions */
 
 /* This is for the question page #1 */
-
-#question1{
-    width: 100%;
-    max-width: 1200px; 
-    margin: 4% auto;
-    height: 750px;
-    display: flex;
-    flex-direction: column; 
-
-    align-items: center;
-    text-align: center;
-
-    gap: 24px;
+#question1, #question2, #question3 {
+  width: 100%;
+  height: 100vh;        /* fill the screen exactly */
+  margin: 0;            /* remove the margin pushing it out */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center;  */
+  padding: 20px 0px;
+  background-color: #232323;
+  gap: 76px;
 }
 
 #progressBar{
     display: flex;
     gap: 16px;
+    justify-content: center;
+    padding-bottom: 22px;
 }
 
 #progressBar div{
-    background-color: white;
+    background-color: transparent;
     width: 40px;
     height: 40px;
     border-radius: 500px;
     border-style: solid;
-    border-color: #238CC1;
+    border-color: #81807F;
 }
 
 #progressBar div.active{
-   background-color: #C4D9D4; 
+   background-color: white; 
 }
+
+#question{
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+}
+
+#question h1{
+    font-family: "Old Standard TT";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+}
+
+#question h2{
+    font-family: "Ubuntu Mono";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+}
+
+
+#reflectScene1, #reflectScene2, #reflectScene3 {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  display: flex;          /* was commented out */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+
 
 #MCQ{
     display: flex;
@@ -146,9 +235,15 @@ nav a{
     width: 398px;
     height: 50px;
     border-radius: 48px;
-    background-color: #238CC1;
+    background-color: #024466;
     color: white;
     border-style: none;
+    color: #FFF;
+    font-family: "Old Standard TT";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 #MCQ button:hover{
@@ -156,27 +251,31 @@ nav a{
     cursor: pointer;
 }
 
-/* This is for the reflection page #1 */
+/* This is for the reflection pages*/
 
-
-#reflectScene1{
-    width: 100%;
-    max-width: 1200px; 
-    margin: 4% auto;
-    height: 750px;
-    /* display: flex; */
-    flex-direction: column; 
-
-    align-items: center;
+#reflection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-
-    gap: 24px;   
+    align-items: center;
 }
 
-#reflectionGIF{
-    width: 298px;
-    height: 298px;
-    background-color: grey;
+#reflection h1{
+    color: #000;
+    font-family: "Old Standard TT";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#reflection h2{
+    font-family: "Ubuntu Mono";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 #reflectScene1 button{
@@ -191,50 +290,16 @@ nav a{
     background-color: #0e618a;
 }
 
-/* This is for the question page #2 */
-
-#question2{
-    width: 100%;
-    max-width: 1200px; 
-    margin: 4% auto;
-    height: 750px;
-    display: flex;
-    flex-direction: column; 
-
-    align-items: center;
-    text-align: center;
-
-    gap: 24px;
-}
-
-#answer2{
-    width: 478px;
-    height: 44px;
-    border-color: #D9D9D9;
-    border-radius: 16px;
-}
-
-/* This is for the reflection page #1 */
-
-
-#reflectScene2{
-    width: 100%;
-    max-width: 1200px; 
-    margin: 4% auto;
-    height: 750px;
-    /* display: flex; */
-    flex-direction: column; 
-
-    align-items: center;
-    text-align: center;
-
-    gap: 24px;   
-}
-
 #reflectionGIF{
     width: 298px;
     height: 298px;
-    background-color: grey;
+    background-color: white;
+
+}
+
+#reflectionGIF img{
+    height: 100%;
+    width: 100%;
 }
 
 #reflectScene2 button{
@@ -250,19 +315,14 @@ nav a{
 }
 
 /* This is for the question page #3 */
+/* This is for the question page #2 */
 
-#question3{
-    width: 100%;
-    max-width: 1200px; 
-    margin: 4% auto;
-    height: 750px;
-    display: flex;
-    flex-direction: column; 
 
-    align-items: center;
-    text-align: center;
-
-    gap: 24px;
+#answer2{
+    width: 478px;
+    height: 44px;
+    border-color: #D9D9D9;
+    border-radius: 16px;
 }
 
 #answer3{
@@ -270,4 +330,12 @@ nav a{
     height: 44px;
     border-color: #D9D9D9;
     border-radius: 16px;
+}
+
+.submit{
+    color: white;
+    height: 44px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #024466;
 }
