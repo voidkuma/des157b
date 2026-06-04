@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smell the Roses</title>
+
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Martian+Mono:wght@100..800&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- my script -->
+     <script src="script.js" defer></script>
+
+    <!-- my stylesheet -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <main>
+
+        <div id="openingScene" class="showing">
+            <nav>
+                <a href="#">[About]</a>
+                <a href="#">[Playground]</a>
+            </nav>
+            <section id="content">
+
+                <h1>Stop and smell the roses</h1>
+                <h4 id="startBtn">[Click here to take a break and reflect on the troubles of the screen]</h4>     
+
+            </section>
+
+            <div id="flowerIMG1">
+
+            </div>
+
+            <div id="flowerIMG2">
+
+            </div>
+
+            <div id="flowerIMG3">
+
+            </div>
+
+            <div id="flowerIMG4">
+
+            </div>
+
+        </div>
+
+        <!-- Question scenes -->
+
+        <div id="question1" class="hidden">
+            <div>
+                <div id="progressBar">
+                    <div id="dot" class="active"></div>
+                    <div id="dot"></div>
+                    <div id="dot"></div>
+                </div>
+
+                <section id="question">
+                    <h1>Question #1</h1>
+                    <h2>On average how many hours do you think you spend on your phone per day?</h2>
+                </section>
+            </div>
+
+            <div id="MCQ">
+                <button id="option1">1-2hrs</button>
+                <button id="option2">3-4hrs</button>
+                <button id="option3">5-7hrs</button>
+                <button id="option4">Too many!</button>
+            </div>
+
+        </div>
+
+        <div id="question2" class="hidden">
+            <div>
+                <div id="progressBar">
+                    <div id="dot" class="active"></div>
+                    <div id="dot" class="active"></div>
+                    <div id="dot"></div>
+                </div>
+
+                <section id="question">
+                    <h1>Question #2</h1>
+                    <h2>What's something you would want to change about your phone usage?</h2>
+                </section>
+            </div>
+
+            <div id="freeResponse">
+                <input type="text" id="answer2" name="phoneUsuage" placeholder="type response here..." >
+                <button type="submit" class="submit"  id="submitReflect1">Submit</button>
+            </div>
+
+        </div>
+
+        <div id="question3" class="hidden">
+            <div>
+                <div id="progressBar">
+                    <div id="dot" class="active"></div>
+                    <div id="dot" class="active"></div>
+                    <div id="dot" class="active"></div>
+                </div>
+
+                <section id="question">
+                    <h1>Question #3</h1>
+                    <h2>What’s something positive that comes from your phone usage?</h2>
+                </section>
+            </div>
+
+            <div id="freeResponse">
+                <input type="text" id="answer3" name="phoneActivity" placeholder="type response here..." >
+                <button type="submit" class="submit" id="submitReflect2">Submit</button>
+            </div>
+
+        </div>
+
+        <!-- reflection scenes -->
+
+        <div id="reflectScene1" class="hidden">
+
+            <div id="reflection">
+                <h1>Did you know?</h1>
+                <div id="reflectionGIF">
+                    <img src="images/phone.gif" alt="phone gif">
+                </div>
+
+                <h2>On average people spend around 5-6 hours a day on their phone</h2>
+            </div>
+            <button class="continue" id="continueReflect1" >Continue -></button>
+            
+        </div>
+
+        <div id="reflectScene2" class="hidden">
+
+            <div id="reflection">
+                <h1>Did you know?</h1>
+                <div id="reflectionGIF"><img src="images/phone.gif" alt="phone gif"></div>
+
+                <h2>The average American unlocks their phone 150 to 186 times a day and spends over 4 hours on it daily</h2>
+            </div>
+            <button class="continue" id="continueReflect2" >Continue -></button>
+
+        </div>
+
+        <div id="reflectScene3" class="hidden">
+
+            <div id="reflection">
+                <h1>Did you know?</h1>
+                <div id="reflectionGIF"><img src="images/phone.gif" alt="phone gif"></div>
+
+                <h2>A highly positive benefit most people get from daily phone usage is the ability to instantly connect with loved ones, which fosters stronger social bonds and reduces feelings of isolation, regardless of physical distance.</h2>
+            </div>
+            <button class="continue" id="continueReflect3" >Continue -></button>
+
+        </div>
+
+        <div id="finalReflection" class="hidden">
+
+        </div>
+
+        <div id="finalReflection" class="hidden">
+
+        </div>
+
+    </main>
+    
+</body>
+</html>
