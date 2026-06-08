@@ -127,6 +127,15 @@
         });
     })
 
+    const smellRosesScene = document.querySelector('#smellRosesScene');
+    const thirdEndReflection = document.querySelector('#continueReflect3');
+
+    thirdEndReflection.addEventListener('click', function(){
+        thirdReflection.className = 'hidden';
+        smellRosesScene.className = 'showing';
+
+    })
+
 
 
 

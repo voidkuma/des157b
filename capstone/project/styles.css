@@ -54,7 +54,7 @@ nav a{
 }
 
 /* Header and h2 */
-#content {
+#openingContent {
   width: 100%;
   flex: 1;                  /* take up remaining space after nav */
   display: flex;
@@ -66,7 +66,7 @@ nav a{
   /* remove height: 100vh */
 }
 
-#content h1{
+#openingContent h1{
     margin: 0px;
     color: #343434;
     font-family: Barrio;
@@ -76,7 +76,7 @@ nav a{
     line-height: normal;
 }
 
-#content h4{
+#openingContent h4{
     color: #343434;
     text-align: center;
     font-family: "Ubuntu Mono";
@@ -85,11 +85,6 @@ nav a{
     font-weight: 400;
     line-height: normal;
     margin: 0px;
-}
-
-
-#startBtn{
-
 }
 
 #startBtn:hover{
@@ -111,6 +106,8 @@ nav a{
     bottom: 0%;
     right: 2%;
 }
+
+/* Questions */
 
 
 #question1, #question2, #question3 {
@@ -146,6 +143,33 @@ nav a{
    background-color: white; 
 }
 
+#question{
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+}
+
+#question h1{
+    font-family: "Domine";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+}
+
+#question h2{
+    font-family: "DM Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+}
+
 .MCQ {
     display: flex;
     flex-direction: column;
@@ -158,10 +182,11 @@ nav a{
     color: white;
     background-color: #024466;
     border-style: none;
+    font-family: 'Economica';
     font-size: 24px;
 }
 
-/* Reflection Scene */
+/* Reflections */
 
 #reflectScene1, #reflectScene2, #reflectScene3 {
   width: 100%;
@@ -185,7 +210,7 @@ nav a{
 
 #reflection h1{
     color: #000;
-    font-family: "Old Standard TT";
+    font-family: "DM Serif Display";
     font-size: 64px;
     font-style: normal;
     font-weight: 400;
@@ -194,37 +219,7 @@ nav a{
 }
 
 #reflection h2{
-    font-family: "Ubuntu Mono";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin: 0px;
-}
-
-
-
-
-#question{
-    text-align: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-
-}
-
-#question h1{
-    font-family: "Old Standard TT";
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin: 0px;
-}
-
-#question h2{
-    font-family: "Ubuntu Mono";
+    font-family: "DM Sans";
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -246,6 +241,8 @@ nav a{
     height: 49px;
     width: 398px;
     color: white;
+    font-family: 'Economica';
+    font-size: 24px;
 }
 
 
@@ -283,3 +280,39 @@ input::placeholder {
     border-radius: 8px;
     background: #024466;
 }
+
+
+#smellRosesScene{
+    width: 100%;
+    height: 100vh;        /* fill the screen exactly */
+    margin: 0;            /* remove the margin pushing it out */ 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#smellRosesScene section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#treeFlower{
+    position: absolute;
+    left: 1%;
+    bottom: 0%;
+}
+
+#treeBush{
+    position: absolute;
+    right: 1%;
+    bottom: 0%;
+}
+
+#sun{
+    position: absolute;
+}
+
+
+
