@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   overflow: hidden;
@@ -33,11 +32,10 @@ main{
   background-color: white;
   height: 100vh;
   display: flex;
-  flex-direction: column;   /* stack nav + content vertically */
+  flex-direction: column;
 }
 
 nav{
-
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -56,14 +54,12 @@ nav a{
 /* Header and h2 */
 #openingContent {
   width: 100%;
-  flex: 1;                  /* take up remaining space after nav */
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 8px;
-
-  /* remove height: 100vh */
 }
 
 #openingContent h1{
@@ -109,15 +105,13 @@ nav a{
 
 /* Questions */
 
-
 #question1, #question2, #question3 {
   width: 100%;
-  height: 100vh;        /* fill the screen exactly */
-  margin: 0;            /* remove the margin pushing it out */
+  height: 100vh;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center;  */
   padding: 20px 0px;
   background-color: #232323;
   gap: 76px;
@@ -149,7 +143,6 @@ nav a{
     display: flex;
     flex-direction: column;
     gap: 22px;
-
 }
 
 #question h1{
@@ -199,7 +192,7 @@ nav a{
   width: 100%;
   height: 100vh;
   margin: 0;
-  display: flex;          /* was commented out */
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -215,7 +208,6 @@ nav a{
     gap: 24px;
     margin: 0px 20%;
 }
-
 
 #reflection h1{
     color: #000;
@@ -236,8 +228,7 @@ nav a{
     margin: 0px;
 }
 
-
-/* This is for the reflection pages*/
+/* Reflection continue buttons */
 
 .continue{
     background-color: #024466;
@@ -260,8 +251,8 @@ nav a{
 
 #smellRosesScene{
     width: 100%;
-    height: 100vh;        /* fill the screen exactly */
-    margin: 0;            /* remove the margin pushing it out */ 
+    height: 100vh;
+    margin: 0;
     position: relative;
     display: flex;
     justify-content: center;
@@ -312,7 +303,6 @@ nav a{
     border-color: #024466;
 }
 
-
 #treeFlower{
     position: absolute;
     left: 1%;
@@ -328,7 +318,6 @@ nav a{
 #sun{
     position: absolute;
     bottom: -30%;
-
     animation: riseUp 3s ease-in forwards;
 }
 
@@ -394,3 +383,275 @@ nav a{
     border-color: #024466; 
 }
 
+/* Card Creation Scene */
+
+#makeCardScene{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 8%;
+    font-family: 'Martian Mono';
+}
+
+#makeCardScene h2{
+    font-family: Domine;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
+#makeCardContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    font-family: 'Martian Mono';
+}
+
+#userCardCreation{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#userCardCreation h3{
+    margin: 0px;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+#userCardCreation section{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#mushroomTxt{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: min-content;
+}
+
+#mushroomTxt img{
+    width: 412.902px;
+    height: 237.876px;
+}
+
+#colors{
+    display: flex;
+    gap: 8px;  
+}
+
+#colors div{
+    width: 44px;
+    height: 44px;
+    padding: 4px;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 1px;
+}
+
+#colors div:hover{
+    box-shadow: 2px 2px rgb(133, 133, 133);
+}
+
+#black{
+    background-color: black;
+}
+
+#red{
+    background-color: #E75B5D;
+} 
+
+#purple{
+    background-color: #7D72AE;
+}
+
+#green{
+    background-color: #9FC490;
+}
+
+#stamps{
+    display: flex;
+    gap: 8px;
+}
+
+#stamps div{
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border: #0000001f;
+    border-style: groove;
+    border-width: 1px;
+}
+
+#stamps div:hover{
+    box-shadow: 2px 2px rgb(133, 133, 133);
+}
+
+.selected{
+    box-shadow: 2px 2px rgb(133, 133, 133);
+}
+
+.buttonSet{
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+}
+
+.Skip{
+    width: 314px;
+    height: 60px;
+    background-color: white;
+    color: #024466;
+    border-style: solid;
+    border-color: #024466; 
+}
+
+.Save{
+    width: 314px;
+    height: 60px;
+    background-color: #024466;
+    color: white;
+    border-style: solid;
+    border-color: #024466; 
+}
+
+.Save:hover{
+    background-color: white;
+    color: #024466;
+    border-color: #024466; 
+}
+
+/* postCardScene */
+
+#postCardScene{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+
+#postCardScene h2{
+    font-family: 'Domine';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
+#postCardScene h3{
+    color: #000;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#card{
+    display: flex;
+    border-style: solid;
+    border-width: 4px;
+    width: 480px;
+    padding: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.chosenStamp{
+    width: 200px;
+    padding: 16px;
+}
+
+#cardRightHalf{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Community Garden */
+
+#communityGarden {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 40px 0 80px 0;
+    box-sizing: border-box;
+}
+
+#communityGarden h2 {
+    font-family: 'Domine';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin: 0 0 16px 0;
+}
+
+.gardenCard {
+    display: flex;
+    border: 4px solid #343434;
+    width: 480px;
+    padding: 8px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.gardenCardLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    min-width: 140px;
+}
+
+.gardenCardLeft p {
+    margin: 0;
+    font-family: 'Martian Mono';
+    font-size: 14px;
+}
+
+.gardenCardLeft img {
+    width: 60px;
+    margin-top: 8px;
+}
+
+.gardenCardRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.gardenCardRight p {
+    margin: 0;
+    font-family: 'DM Sans';
+    font-size: 18px;
+    text-align: center;
+}
+
+.noCards {
+    font-family: 'DM Sans';
+    font-size: 20px;
+    color: #81807F;
+    text-align: center;
+}

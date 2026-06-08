@@ -25,8 +25,8 @@
 
         <div id="openingScene" class="showing">
             <nav>
-                <a href="#">ABOUT</a>
-                <a href="#">COMMUNITY GARDEN</a>
+                <a>ABOUT</a>
+                <a>COMMUNITY GARDEN</a>
             </nav>
             <section id="openingContent">
 
@@ -185,6 +185,88 @@
             <div id="gif3">
 
             </div>
+
+        </div>
+
+        <div id="makeCardScene" class="hidden">
+            <h2>Make Someone's Day</h2>
+            <div id="makeCardContainer">
+                <div id="mushroomTxt">
+                    <img src="images/loveMushrooms.png" alt="mushrooms in love">
+                    <p>Make a postcard to post for others to see! Or just to send to a loved one!</p>
+                </div>
+                <div id="userCardCreation">
+                    <section>
+                        <h3>Choose a color!</h3>
+                        <div id="colors">
+                            <div id="black"></div>
+                            <div id="red"></div>
+                            <div id="purple"></div>
+                            <div id="green"></div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Choose a stamp!</h3>
+                        <div id="stamps">
+                            <div id="sunStamp"><img src="images/sunStamp.svg"></div>
+                            <div id="mushroomStamp"><img src="images/mushroomStamp.svg"></div>
+                            <div id="flowerStamp"><img src="images/purpleFlower.svg"></div>
+                            <div id="heartStamp"><img src="images/heartStamp.svg"></div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Who’s it to? (optional)</h3>
+                        <input type="text" placeholder="Name here...">
+                    </section>
+
+                    <section>
+                        <h3>What’s your name? (optional)</h3>
+                        <input type="text" placeholder="Your name here...">
+                    </section>
+
+                    <section>
+                        <h3>Write your message!</h3>
+                        <input type="text" placeholder="Your message here...">
+                    </section>
+
+                </div>
+            </div>
+            <div class="buttonSet">
+                <button class="Skip">Skip</button>
+                <button class="Save" id="saveCard">Save</button>
+            </div>
+
+
+        </div>
+
+        <div id="postCardScene" class="hidden">
+            <header>
+                <h2>You’re Awesome!</h2>
+                <h3>Now send this card to someone you love and/or share it to the world to see!</h3>
+            </header>
+            <div id="card">
+                <div id="cardLeftHalf">
+                    <div id="toFromInfo">
+                        <p>To:</p>
+                        <p>From:</p>
+                    </div>
+                    <img class="chosenStamp" src="images/sun.svg" alt="chosen user Stamp">
+                </div>
+
+                <div id="cardRightHalf">
+                    <p id="cardMessage">Miss you man, let's hangout</p>
+                </div>
+            </div>
+            <div class="buttonSet">
+                <button class="Skip">Skip</button>
+                <button class="Save" id="postCard">Post</button>    
+            </div>
+        </div>
+
+        <div id="communityGarden" class="hidden">
+            <h2>See What others said</h2>
 
         </div>
 
