@@ -30,8 +30,7 @@ main{
 /* First scene, the opening scene */
 
 #openingScene {
-  background-color: black;
-  color: white;
+  background-color: white;
   height: 100vh;
   display: flex;
   flex-direction: column;   /* stack nav + content vertically */
@@ -46,7 +45,7 @@ nav{
 
 nav a{
     text-decoration: none;
-    color: #FFF;
+    color: #343434;
     font-family: "Martian Mono";
     font-size: 16px;
     font-style: normal;
@@ -63,12 +62,13 @@ nav a{
   justify-content: center;
   align-items: center;
   gap: 8px;
+
   /* remove height: 100vh */
 }
 
 #content h1{
     margin: 0px;
-    color: #FFF;
+    color: #343434;
     font-family: Barrio;
     font-size: 64px;
     font-style: normal;
@@ -77,7 +77,7 @@ nav a{
 }
 
 #content h4{
-    color: rgba(255, 255, 255, 0.80);
+    color: #343434;
     text-align: center;
     font-family: "Ubuntu Mono";
     font-size: 20px;
@@ -97,60 +97,22 @@ nav a{
     cursor: pointer;
 }
 
-#flowerIMG1{
-    background-image: url(images/flower1.png);
-    background-position: center;
-    width: 405px;
-    height: 228px;
-    transform: rotate(-24.279deg);
-    border-radius: 50%;
-
-        position: absolute;
-    top: 50px;
-    left: 30px;
-}
-
-#flowerIMG2{
-    background-image: url(images/flower2.png);
-    background-position: center;
-    width: 272.735px;
-    height: 179.299px;
-    transform: rotate(-131.997deg);
-    border-radius: 50%;
-        position: absolute;
-    bottom: 20px;
-    left: 200px;
-}
-
-#flowerIMG3{
-    background-image: url(images/flower3.png);
-    background-position: center;
-    width: 272.735px;
-    height: 179.299px;
-    transform: rotate(-131.997deg);
-    border-radius: 50%;
-
+#yellowFlower{
     position: absolute;
-    top: 30px;
-    right: 190px;
+    height: 100%;
+    top: 9%;
+    right: 72%;
 }
 
-#flowerIMG4{
-    background-image: url(images/flower4.png);
+#pinkFlower{
     background-position: center;
-    width: 272.735px;
-    height: 179.299px;
-    transform: rotate(-43.513deg);
-    border-radius: 50%;
-
+    height: 40%;
     position: absolute;
-    top: 400px;
-    right: 20px;
+    bottom: 0%;
+    right: 2%;
 }
 
-/* questions */
 
-/* This is for the question page #1 */
 #question1, #question2, #question3 {
   width: 100%;
   height: 100vh;        /* fill the screen exactly */
@@ -184,6 +146,65 @@ nav a{
    background-color: white; 
 }
 
+.MCQ {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+}
+
+.MCQ button{
+    width: 408px;
+    height: 48px;
+    color: white;
+    background-color: #024466;
+    border-style: none;
+    font-size: 24px;
+}
+
+/* Reflection Scene */
+
+#reflectScene1, #reflectScene2, #reflectScene3 {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  display: flex;          /* was commented out */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 144px;
+}
+
+#reflection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 24px;
+}
+
+#reflection h1{
+    color: #000;
+    font-family: "Old Standard TT";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+}
+
+#reflection h2{
+    font-family: "Ubuntu Mono";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+}
+
+
+
+
 #question{
     text-align: center;
     color: white;
@@ -212,39 +233,6 @@ nav a{
 }
 
 
-#reflectScene1, #reflectScene2, #reflectScene3 {
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  display: flex;          /* was commented out */
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-}
-
-
-
-#MCQ{
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-}
-
-#MCQ button{
-    width: 398px;
-    height: 50px;
-    border-radius: 48px;
-    background-color: #024466;
-    color: white;
-    border-style: none;
-    color: #FFF;
-    font-family: "Old Standard TT";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
 
 #MCQ button:hover{
     background-color: #3fa2d4;
@@ -253,66 +241,15 @@ nav a{
 
 /* This is for the reflection pages*/
 
-#reflection{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-}
-
-#reflection h1{
-    color: #000;
-    font-family: "Old Standard TT";
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-#reflection h2{
-    font-family: "Ubuntu Mono";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-#reflectScene1 button{
+.continue{
     background-color: #024466;
     height: 49px;
     width: 398px;
     color: white;
-    border-radius: 48px;
 }
 
-#reflectScene1 button:hover{
-    background-color: #0e618a;
-}
 
-#reflectionGIF{
-    width: 298px;
-    height: 298px;
-    background-color: white;
 
-}
-
-#reflectionGIF img{
-    height: 100%;
-    width: 100%;
-}
-
-#reflectScene2 button{
-    background-color: #024466;
-    height: 49px;
-    width: 398px;
-    color: white;
-    border-radius: 48px;
-}
-
-#reflectScene2 button:hover{
-    background-color: #0e618a;
-}
 
 /* This is for the question page #3 */
 /* This is for the question page #2 */

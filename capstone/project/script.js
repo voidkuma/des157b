@@ -2,70 +2,132 @@
     'use strict';
     console.log('reading js');
 
+    Parse.initialize("g4cVIgY1yEjsQlradMy6nlrSIFAsMHMoY6QK4uNp", "FON8uE3vIM7FUUcahqjMtW4VytTNhjSq8FT6F0JR");
+    Parse.serverURL = "https://parseapi.back4app.com/";
 
-    // [Logic]: User pressing play -> then leading onto the next scene
 
-    const start = document.querySelector('#startBtn');
+    // Save a response and return the % who picked the same answer
+    async function saveAndGetPercentage(questionId, answer) {
+        const QuizResponse = Parse.Object.extend("QuizResponse");
+        
+        // Save this user's answer
+        const response = new QuizResponse();
+        response.set("questionId", questionId);
+        response.set("answer", answer);
+        await response.save();
+
+        // Count how many picked the same answer
+        const sameQuery = new Parse.Query(QuizResponse);
+        sameQuery.equalTo("questionId", questionId);
+        sameQuery.equalTo("answer", answer);
+        const sameCount = await sameQuery.count();
+
+        // Count total for this question
+        const totalQuery = new Parse.Query(QuizResponse);
+        totalQuery.equalTo("questionId", questionId);
+        const totalCount = await totalQuery.count();
+
+        return {
+            percentage: Math.round((sameCount / totalCount) * 100),
+            total: totalCount
+        };
+    }
+
+    // Opening scene -> Question #1
     const openingScene = document.querySelector('#openingScene');
-    const question1 = document.querySelector('#question1');
+    const startBtn = document.querySelector('#startBtn');
+    const firstQuestion = document.querySelector('#question1');
 
-    start.addEventListener('click', function(){
+    startBtn.addEventListener('click', function(){
         openingScene.className = 'hidden';
-        question1.className = 'showing';
+        firstQuestion.className = 'showing';
+    })
+
+    // Question #1 -> Reflection #1
+
+    const mcqSet1 = document.querySelectorAll('#MCQ1 button');
+    const firstReflection = document.querySelector('#reflectScene1');
+    const reflectStat1 = document.querySelector('#reflectionScene1 h1');
+    const reflectTotal1 = document.querySelector('#reflectTotal1');
+
+    mcqSet1.forEach(function(btn){
+        btn.addEventListener('click', async function() {
+            const answer = btn.id; // "option1", "option2", etc.
+            
+            firstQuestion.className = 'hidden';
+            firstReflection.className = 'showing';
+
+            const data = await saveAndGetPercentage('q1', answer);
+
+            reflectTotal1.textContent = `${data.total} reponses`;
+            reflectStat1.textContent = `${data.percentage}% of others feel that way`;
+        });
+    })
+
+    // Reflection #1 -> Question #2
+
+    const firstEndReflection = document.querySelector('#continueReflect1');
+    const secondQuestion = document.querySelector('#question2');
+
+    firstEndReflection.addEventListener('click', function(){
+        firstReflection.className = 'hidden';
+        secondQuestion.className = 'showing';
 
     })
 
-        // [Logic]: user answering Question #1 and having that lead to reflection #1
+    // Question #2 -> Reflection #2
 
-        const btns = document.querySelectorAll('#MCQ button');
-        const reflection1 = document.querySelector('#reflectScene1');
+    const mcqSet2 = document.querySelectorAll('#MCQ2 button');
+    const secondReflection = document.querySelector('#reflectScene2');
+    const reflectStat2 = document.querySelector('#reflectionScene2 h1');
+    const reflectTotal2 = document.querySelector('#reflectTotal2');
 
-        btns.forEach(function(btn){
-            btn.addEventListener('click', function(){
-                question1.className = 'hidden';
-                reflection1.className = 'showing';
-            })
-        })
+    mcqSet2.forEach(function(btn){
+        btn.addEventListener('click', async function() {
+            const answer = btn.id; // "option1", "option2", etc.
+            
+            secondQuestion.className = 'hidden';
+            secondReflection.className = 'showing';
 
-    // [Logic]: Reflection #1 to Question #2
+            const data = await saveAndGetPercentage('q2', answer);
 
-    const continueReflect1 = document.querySelector('#continueReflect1');
-    const secondQuestion = document.querySelector('#question2');
+            reflectTotal2.textContent = `${data.total} reponses`;
+            reflectStat2.textContent = `${data.percentage}% of others feel that way`;
+        });
+    })
 
-        continueReflect1.addEventListener('click', function(){
-            reflection1.className = 'hidden';
-            secondQuestion.className = 'showing'; 
-        })
+    // Reflection #2 -> Question #3
 
-        // [Logic]: Question #2 to Reflection #2
-
-        const secondSubmit = document.querySelector('#submitReflect1');
-        const secondReflection = document.querySelector('#reflectScene2')
-
-            secondSubmit.addEventListener('click', function(){
-                secondQuestion.className = 'hidden';
-                secondReflection.className = 'showing';
-            })
-
-    // [Logic]: Reflection #2 -> Question #3
-
+    const secondEndReflection = document.querySelector('#continueReflect2');
     const thirdQuestion = document.querySelector('#question3');
-    const continueReflect2 = document.querySelector('#continueReflect2')
 
-    continueReflect2.addEventListener('click', function(){
+    secondEndReflection.addEventListener('click', function(){
         secondReflection.className = 'hidden';
         thirdQuestion.className = 'showing';
     })
 
-        // [Logic] Question #3 -> Reflection #3
-        const thirdReflection = document.querySelector('#reflectScene3');
-        const thirdSubmit = document.querySelector('#submitReflect2');
+    // Question #3 -> Reflection #3
 
-        thirdSubmit.addEventListener('click', function(){
+    const mcqSet3 = document.querySelectorAll('#MCQ3 button');
+    const thirdReflection = document.querySelector('#reflectScene3');
+    const reflectStat3 = document.querySelector('#reflectionScene3 h1');
+    const reflectTotal3 = document.querySelector('#reflectTotal3');
+
+    mcqSet3.forEach(function(btn){
+        btn.addEventListener('click', async function() {
+            const answer = btn.id; // "option1", "option2", etc.
+            
             thirdQuestion.className = 'hidden';
             thirdReflection.className = 'showing';
-        })
-    
+
+            const data = await saveAndGetPercentage('q3', answer);
+
+            reflectTotal3.textContent = `${data.total} reponses`;
+            reflectStat3.textContent = `${data.percentage}% of others feel that way`;
+        });
+    })
+
+
 
 
 })();
