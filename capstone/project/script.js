@@ -47,7 +47,7 @@
 
     const mcqSet1 = document.querySelectorAll('#MCQ1 button');
     const firstReflection = document.querySelector('#reflectScene1');
-    const reflectStat1 = document.querySelector('#reflectionScene1 h1');
+    const reflectStat1 = document.querySelector('#reflectScene1 h1');
     const reflectTotal1 = document.querySelector('#reflectTotal1');
 
     mcqSet1.forEach(function(btn){
@@ -79,7 +79,7 @@
 
     const mcqSet2 = document.querySelectorAll('#MCQ2 button');
     const secondReflection = document.querySelector('#reflectScene2');
-    const reflectStat2 = document.querySelector('#reflectionScene2 h1');
+    const reflectStat2 = document.querySelector('#reflectScene2 h1');
     const reflectTotal2 = document.querySelector('#reflectTotal2');
 
     mcqSet2.forEach(function(btn){
@@ -110,7 +110,7 @@
 
     const mcqSet3 = document.querySelectorAll('#MCQ3 button');
     const thirdReflection = document.querySelector('#reflectScene3');
-    const reflectStat3 = document.querySelector('#reflectionScene3 h1');
+    const reflectStat3 = document.querySelector('#reflectScene3 h1');
     const reflectTotal3 = document.querySelector('#reflectTotal3');
 
     mcqSet3.forEach(function(btn){
@@ -127,13 +127,30 @@
         });
     })
 
+    // Reflection 3 -> Smell Roses Scene
+
     const smellRosesScene = document.querySelector('#smellRosesScene');
     const thirdEndReflection = document.querySelector('#continueReflect3');
+
+    new TypeIt("#startBtn", {
+        speed: 50,
+        waitUntilVisible: true,
+    }).go();
 
     thirdEndReflection.addEventListener('click', function(){
         thirdReflection.className = 'hidden';
         smellRosesScene.className = 'showing';
 
+    })
+
+    // Smell Roses Scene -> neverLateScene
+
+    const neverLateScene = document.querySelector('#neverLateScene');
+    const smellRosesCloseBtn = document.querySelector('#smellRosesScene button');
+
+    smellRosesCloseBtn.addEventListener('click', function(){
+        smellRosesScene.className = 'hidden';
+        neverLateScene.className = 'showing';
     })
 
 

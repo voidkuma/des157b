@@ -186,6 +186,13 @@ nav a{
     font-size: 24px;
 }
 
+.MCQ button:hover{
+    background-color: white;
+    color: #024466;
+    border-style: solid;
+    border-color: #024466;
+}
+
 /* Reflections */
 
 #reflectScene1, #reflectScene2, #reflectScene3 {
@@ -206,7 +213,9 @@ nav a{
     text-align: center;
     align-items: center;
     gap: 24px;
+    margin: 0px 20%;
 }
+
 
 #reflection h1{
     color: #000;
@@ -228,12 +237,6 @@ nav a{
 }
 
 
-
-#MCQ button:hover{
-    background-color: #3fa2d4;
-    cursor: pointer;
-}
-
 /* This is for the reflection pages*/
 
 .continue{
@@ -245,42 +248,15 @@ nav a{
     font-size: 24px;
 }
 
-
-
-
-/* This is for the question page #3 */
-/* This is for the question page #2 */
-
-
-#answer2{
-    width: 478px;
-    height: 44px;
-    border-color: #D9D9D9;
-    border-radius: 16px;
-    padding: 0px 20px;
+.continue:hover{
+    background-color: white;
+    color: #024466;
+    border-style: solid;
+    border-color: #024466;
 }
 
-#answer3{
-    width: 478px;
-    height: 44px;
-    border-color: #D9D9D9;
-    border-radius: 16px;
-    padding: 0px 20px;
-}
 
-input::placeholder {
-  font-style: italic;
-  color: rgba(0, 0, 0, 0.273);
-}
-
-.submit{
-    color: white;
-    height: 44px;
-    padding: 10px;
-    border-radius: 8px;
-    background: #024466;
-}
-
+/* Smell roses scene */
 
 #smellRosesScene{
     width: 100%;
@@ -292,11 +268,50 @@ input::placeholder {
     align-items: center;
 }
 
-#smellRosesScene section{
+#smellRosesContent{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 27px;
+    z-index: 1;
 }
+
+#smellRosesContent h1{
+    font-family: 'Domine';
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+}
+
+#smellRosesContent p{
+    width: 629px;
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#smellRosesContent button{
+    width: 314px;
+    height: 37px;
+    border-style: none;
+    background-color: #024466;
+    color: white;
+    font-family: 'Economica';
+    font-size: 32px;
+}
+
+#smellRosesContent button:hover{
+    background-color: white;
+    color: #024466;
+    border-style: solid;
+    border-color: #024466;
+}
+
 
 #treeFlower{
     position: absolute;
@@ -312,7 +327,70 @@ input::placeholder {
 
 #sun{
     position: absolute;
+    bottom: -30%;
+
+    animation: riseUp 3s ease-in forwards;
 }
 
+@keyframes riseUp{
+    from{
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-360%);
+    } 
+}
 
+#neverLateScene{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 40%;
+}
+
+#neverLateContent{
+    margin: 0px 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+#neverLateContent h4{
+    font-family: 'DM Serif Display';
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0px;
+    text-align: center;
+}
+
+#neverLateContent p{
+    text-align: justify;
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 600px;
+}
+
+#getStartedBtn{
+    width: 314px;
+    height: 37px;
+    border-style: none;
+    background-color: #024466;
+    color: white;
+    font-family: 'Economica';
+    font-size: 32px;   
+}
+
+#getStartedBtn:hover{
+    background-color: white;
+    color: #024466;
+    border-style: solid;
+    border-color: #024466; 
+}
 
