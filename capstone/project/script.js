@@ -5,24 +5,20 @@
     Parse.initialize("g4cVIgY1yEjsQlradMy6nlrSIFAsMHMoY6QK4uNp", "FON8uE3vIM7FUUcahqjMtW4VytTNhjSq8FT6F0JR");
     Parse.serverURL = "https://parseapi.back4app.com/";
 
-
     // Save a response and return the % who picked the same answer
     async function saveAndGetPercentage(questionId, answer) {
         const QuizResponse = Parse.Object.extend("QuizResponse");
-        
-        // Save this user's answer
+
         const response = new QuizResponse();
         response.set("questionId", questionId);
         response.set("answer", answer);
         await response.save();
 
-        // Count how many picked the same answer
         const sameQuery = new Parse.Query(QuizResponse);
         sameQuery.equalTo("questionId", questionId);
         sameQuery.equalTo("answer", answer);
         const sameCount = await sameQuery.count();
 
-        // Count total for this question
         const totalQuery = new Parse.Query(QuizResponse);
         totalQuery.equalTo("questionId", questionId);
         const totalCount = await totalQuery.count();
@@ -33,135 +29,190 @@
         };
     }
 
-    // Opening scene -> Question #1
-    const openingScene = document.querySelector('#openingScene');
-    const startBtn = document.querySelector('#startBtn');
-    const firstQuestion = document.querySelector('#question1');
+    // -------------------------------------------------------
+    // Scenes
+    // -------------------------------------------------------
 
-    startBtn.addEventListener('click', function(){
-        openingScene.className = 'hidden';
-        firstQuestion.className = 'showing';
-    })
+    const openingScene        = document.querySelector('#openingScene');
+    const firstQuestion       = document.querySelector('#question1');
+    const firstReflection     = document.querySelector('#reflectScene1');
+    const secondQuestion      = document.querySelector('#question2');
+    const secondReflection    = document.querySelector('#reflectScene2');
+    const thirdQuestion       = document.querySelector('#question3');
+    const thirdReflection     = document.querySelector('#reflectScene3');
+    const smellRosesScene     = document.querySelector('#smellRosesScene');
+    const neverLateScene      = document.querySelector('#neverLateScene');
+    const cardCreationScene   = document.querySelector('#makeCardScene');
+    const postCardScene       = document.querySelector('#postCardScene');
+    const communityGardenScene = document.querySelector('#communityGarden');
+    const globalNav           = document.querySelector('#globalNav');
 
-    // Question #1 -> Reflection #1
+    // -------------------------------------------------------
+    // Nav color helper — white text on dark scenes
+    // -------------------------------------------------------
 
-    const mcqSet1 = document.querySelectorAll('#MCQ1 button');
-    const firstReflection = document.querySelector('#reflectScene1');
-    const reflectStat1 = document.querySelector('#reflectScene1 h1');
-    const reflectTotal1 = document.querySelector('#reflectTotal1');
+    const darkScenes = ['question1', 'question2', 'question3', 'smellRosesScene'];
 
-    mcqSet1.forEach(function(btn){
-        btn.addEventListener('click', async function() {
-            const answer = btn.id;
-            
-            firstQuestion.className = 'hidden';
-            firstReflection.className = 'showing';
+    function updateNavColor(sceneId) {
+        if (darkScenes.includes(sceneId)) {
+            globalNav.classList.add('light-text');
+        } else {
+            globalNav.classList.remove('light-text');
+        }
+    }
 
-            const data = await saveAndGetPercentage('q1', answer);
+    // -------------------------------------------------------
+    // Global nav buttons
+    // -------------------------------------------------------
 
-            reflectTotal1.textContent = `${data.total} reponses`;
-            reflectStat1.textContent = `${data.percentage}% of others feel that way`;
+    document.querySelector('#navHomeBtn').addEventListener('click', function(){
+        document.querySelectorAll('main > div').forEach(function(scene){
+            scene.className = 'hidden';
         });
-    })
+        openingScene.className = 'showing';
+        document.body.style.overflow = 'hidden';
+        updateNavColor('openingScene');
+    });
 
-    // Reflection #1 -> Question #2
-
-    const firstEndReflection = document.querySelector('#continueReflect1');
-    const secondQuestion = document.querySelector('#question2');
-
-    firstEndReflection.addEventListener('click', function(){
-        firstReflection.className = 'hidden';
-        secondQuestion.className = 'showing';
-    })
-
-    // Question #2 -> Reflection #2
-
-    const mcqSet2 = document.querySelectorAll('#MCQ2 button');
-    const secondReflection = document.querySelector('#reflectScene2');
-    const reflectStat2 = document.querySelector('#reflectScene2 h1');
-    const reflectTotal2 = document.querySelector('#reflectTotal2');
-
-    mcqSet2.forEach(function(btn){
-        btn.addEventListener('click', async function() {
-            const answer = btn.id;
-            
-            secondQuestion.className = 'hidden';
-            secondReflection.className = 'showing';
-
-            const data = await saveAndGetPercentage('q2', answer);
-
-            reflectTotal2.textContent = `${data.total} reponses`;
-            reflectStat2.textContent = `${data.percentage}% of others feel that way`;
+    document.querySelector('#navGardenBtn').addEventListener('click', function(){
+        document.querySelectorAll('main > div').forEach(function(scene){
+            scene.className = 'hidden';
         });
-    })
+        communityGardenScene.className = 'showing';
+        document.body.style.overflow = 'auto';
+        updateNavColor('communityGarden');
+        loadCommunityGarden();
+    });
 
-    // Reflection #2 -> Question #3
-
-    const secondEndReflection = document.querySelector('#continueReflect2');
-    const thirdQuestion = document.querySelector('#question3');
-
-    secondEndReflection.addEventListener('click', function(){
-        secondReflection.className = 'hidden';
-        thirdQuestion.className = 'showing';
-    })
-
-    // Question #3 -> Reflection #3
-
-    const mcqSet3 = document.querySelectorAll('#MCQ3 button');
-    const thirdReflection = document.querySelector('#reflectScene3');
-    const reflectStat3 = document.querySelector('#reflectScene3 h1');
-    const reflectTotal3 = document.querySelector('#reflectTotal3');
-
-    mcqSet3.forEach(function(btn){
-        btn.addEventListener('click', async function() {
-            const answer = btn.id;
-            
-            thirdQuestion.className = 'hidden';
-            thirdReflection.className = 'showing';
-
-            const data = await saveAndGetPercentage('q3', answer);
-
-            reflectTotal3.textContent = `${data.total} reponses`;
-            reflectStat3.textContent = `${data.percentage}% of others feel that way`;
-        });
-    })
-
-    // Reflection 3 -> Smell Roses Scene
-
-    const smellRosesScene = document.querySelector('#smellRosesScene');
-    const thirdEndReflection = document.querySelector('#continueReflect3');
+    // -------------------------------------------------------
+    // TypeIt on start button
+    // -------------------------------------------------------
 
     new TypeIt("#startBtn", {
         speed: 50,
         waitUntilVisible: true,
     }).go();
 
-    thirdEndReflection.addEventListener('click', function(){
+    // -------------------------------------------------------
+    // Opening scene -> Question #1
+    // -------------------------------------------------------
+
+    document.querySelector('#startBtn').addEventListener('click', function(){
+        openingScene.className = 'hidden';
+        firstQuestion.className = 'showing';
+        updateNavColor('question1');
+    });
+
+    // -------------------------------------------------------
+    // Question #1 -> Reflection #1
+    // -------------------------------------------------------
+
+    const reflectStat1  = document.querySelector('#reflectScene1 h1');
+    const reflectTotal1 = document.querySelector('#reflectTotal1');
+
+    document.querySelectorAll('#MCQ1 button').forEach(function(btn){
+        btn.addEventListener('click', async function() {
+            firstQuestion.className = 'hidden';
+            firstReflection.className = 'showing';
+            updateNavColor('reflectScene1');
+
+            const data = await saveAndGetPercentage('q1', btn.id);
+            reflectTotal1.textContent = `${data.total} responses`;
+            reflectStat1.textContent  = `${data.percentage}% of others feel that way`;
+        });
+    });
+
+    // -------------------------------------------------------
+    // Reflection #1 -> Question #2
+    // -------------------------------------------------------
+
+    document.querySelector('#continueReflect1').addEventListener('click', function(){
+        firstReflection.className = 'hidden';
+        secondQuestion.className = 'showing';
+        updateNavColor('question2');
+    });
+
+    // -------------------------------------------------------
+    // Question #2 -> Reflection #2
+    // -------------------------------------------------------
+
+    const reflectStat2  = document.querySelector('#reflectScene2 h1');
+    const reflectTotal2 = document.querySelector('#reflectTotal2');
+
+    document.querySelectorAll('#MCQ2 button').forEach(function(btn){
+        btn.addEventListener('click', async function() {
+            secondQuestion.className = 'hidden';
+            secondReflection.className = 'showing';
+            updateNavColor('reflectScene2');
+
+            const data = await saveAndGetPercentage('q2', btn.id);
+            reflectTotal2.textContent = `${data.total} responses`;
+            reflectStat2.textContent  = `${data.percentage}% of others feel that way`;
+        });
+    });
+
+    // -------------------------------------------------------
+    // Reflection #2 -> Question #3
+    // -------------------------------------------------------
+
+    document.querySelector('#continueReflect2').addEventListener('click', function(){
+        secondReflection.className = 'hidden';
+        thirdQuestion.className = 'showing';
+        updateNavColor('question3');
+    });
+
+    // -------------------------------------------------------
+    // Question #3 -> Reflection #3
+    // -------------------------------------------------------
+
+    const reflectStat3  = document.querySelector('#reflectScene3 h1');
+    const reflectTotal3 = document.querySelector('#reflectTotal3');
+
+    document.querySelectorAll('#MCQ3 button').forEach(function(btn){
+        btn.addEventListener('click', async function() {
+            thirdQuestion.className = 'hidden';
+            thirdReflection.className = 'showing';
+            updateNavColor('reflectScene3');
+
+            const data = await saveAndGetPercentage('q3', btn.id);
+            reflectTotal3.textContent = `${data.total} responses`;
+            reflectStat3.textContent  = `${data.percentage}% of others feel that way`;
+        });
+    });
+
+    // -------------------------------------------------------
+    // Reflection #3 -> Smell Roses Scene
+    // -------------------------------------------------------
+
+    document.querySelector('#continueReflect3').addEventListener('click', function(){
         thirdReflection.className = 'hidden';
         smellRosesScene.className = 'showing';
-    })
+        updateNavColor('smellRosesScene');
+    });
 
+    // -------------------------------------------------------
     // Smell Roses Scene -> neverLateScene
+    // -------------------------------------------------------
 
-    const neverLateScene = document.querySelector('#neverLateScene');
-    const smellRosesCloseBtn = document.querySelector('#smellRosesScene button');
-
-    smellRosesCloseBtn.addEventListener('click', function(){
+    document.querySelector('#smellRosesScene button').addEventListener('click', function(){
         smellRosesScene.className = 'hidden';
         neverLateScene.className = 'showing';
-    })
+        updateNavColor('neverLateScene');
+    });
 
-    // neverLateScene -> CardCreationScene
+    // -------------------------------------------------------
+    // neverLateScene -> makeCardScene
+    // -------------------------------------------------------
 
-    const endNeverLateSceneBtn = document.querySelector('#getStartedBtn');
-    const cardCreationScene = document.querySelector('#makeCardScene');
-
-    endNeverLateSceneBtn.addEventListener('click', function(){
+    document.querySelector('#getStartedBtn').addEventListener('click', function(){
         neverLateScene.className = 'hidden';
         cardCreationScene.className = 'showing';
-    })
+        updateNavColor('makeCardScene');
+    });
 
-    // Card Creation: track selected color & stamp
+    // -------------------------------------------------------
+    // Card creation: track color & stamp
+    // -------------------------------------------------------
 
     let selectedColor = null;
     let selectedStamp = null;
@@ -171,67 +222,54 @@
 
     colors.forEach(function(color){
         color.addEventListener('click', function() {
-            colors.forEach(function(c) {
-                c.classList.remove('selected');
-            });
+            colors.forEach(c => c.classList.remove('selected'));
             color.classList.add('selected');
-            selectedColor = color.id; // "black", "red", "purple", "green"
+            selectedColor = color.id;
         });
-    })
+    });
 
     stamps.forEach(function(stamp){
         stamp.addEventListener('click', function(){
-            stamps.forEach(function(s){
-                s.classList.remove('selected');
-            });
+            stamps.forEach(s => s.classList.remove('selected'));
             stamp.classList.add('selected');
-            selectedStamp = stamp.id; // "sunStamp", "mushroomStamp", "flowerStamp", "heartStamp"
-        })
-    })
+            selectedStamp = stamp.id;
+        });
+    });
 
-    // Map color IDs to hex values
     function getColorHex(colorId) {
-        const map = {
-            black: '#000000',
-            red: '#E75B5D',
-            purple: '#7D72AE',
-            green: '#9FC490'
-        };
+        const map = { black: '#000000', red: '#E75B5D', purple: '#7D72AE', green: '#9FC490' };
         return map[colorId] || 'white';
     }
 
-    // Map stamp IDs to image paths
     const stampImages = {
-        sunStamp: 'images/sunStamp.svg',
+        sunStamp:      'images/sunStamp.svg',
         mushroomStamp: 'images/mushroomStamp.svg',
-        flowerStamp: 'images/purpleFlower.svg',
-        heartStamp: 'images/heartStamp.svg'
+        flowerStamp:   'images/purpleFlower.svg',
+        heartStamp:    'images/heartStamp.svg'
     };
 
-    // Input references
-    const cardInputs = document.querySelectorAll('#makeCardScene input');
-    const toInput = cardInputs[0];
-    const fromInput = cardInputs[1];
+    const cardInputs  = document.querySelectorAll('#makeCardScene input');
+    const toInput     = cardInputs[0];
+    const fromInput   = cardInputs[1];
     const messageInput = cardInputs[2];
 
-    // Skip button on makeCardScene goes straight to community garden
-    const skipCardBtn = document.querySelector('#makeCardScene .Skip');
+    // -------------------------------------------------------
+    // Skip makeCardScene -> communityGarden
+    // -------------------------------------------------------
 
-    skipCardBtn.addEventListener('click', function(){
+    document.querySelector('#makeCardScene .Skip').addEventListener('click', function(){
         cardCreationScene.className = 'hidden';
         communityGardenScene.className = 'showing';
         document.body.style.overflow = 'auto';
+        updateNavColor('communityGarden');
         loadCommunityGarden();
-    })
+    });
 
-    // cardCreationScene -> postCardScene
+    // -------------------------------------------------------
+    // Save card -> postCardScene
+    // -------------------------------------------------------
 
-    const saveCardBtn = document.querySelector('#saveCard');
-    const postCardScene = document.querySelector('#postCardScene');
-
-    saveCardBtn.addEventListener('click', function(){
-
-        // Update the postcard preview with the user's choices
+    document.querySelector('#saveCard').addEventListener('click', function(){
         document.querySelector('#toFromInfo').innerHTML = `
             <p>To: ${toInput.value || '—'}</p>
             <p>From: ${fromInput.value || '—'}</p>
@@ -239,62 +277,62 @@
         document.querySelector('#cardMessage').textContent = messageInput.value || '';
         document.querySelector('.chosenStamp').src = stampImages[selectedStamp] || 'images/sun.svg';
 
-        // Apply the chosen background color to the card
         if (selectedColor) {
-            document.querySelector('#card').style.backgroundColor = getColorHex(selectedColor);
-            // Make text white on dark backgrounds for readability
             const darkColors = ['black', 'purple'];
-            const textColor = darkColors.includes(selectedColor) ? 'white' : '#343434';
-            document.querySelector('#card').style.color = textColor;
+            document.querySelector('#card').style.backgroundColor = getColorHex(selectedColor);
+            document.querySelector('#card').style.color = darkColors.includes(selectedColor) ? 'white' : '#343434';
         }
 
         cardCreationScene.className = 'hidden';
         postCardScene.className = 'showing';
-    })
+        updateNavColor('postCardScene');
+    });
 
-    // postCardScene -> communityGarden (Post button)
+    // -------------------------------------------------------
+    // Post card -> communityGarden
+    // -------------------------------------------------------
 
-    const postCardBtn = document.querySelector('#postCard');
-    const communityGardenScene = document.querySelector('#communityGarden');
-
-    postCardBtn.addEventListener('click', async function(){
+    document.querySelector('#postCard').addEventListener('click', async function(){
         const Card = Parse.Object.extend("Card");
         const card = new Card();
 
-        card.set("color", selectedColor);
-        card.set("stamp", selectedStamp);
-        card.set("toName", toInput.value || '');
+        card.set("color",    selectedColor);
+        card.set("stamp",    selectedStamp);
+        card.set("toName",   toInput.value || '');
         card.set("fromName", fromInput.value || '');
-        card.set("message", messageInput.value || '');
+        card.set("message",  messageInput.value || '');
 
         await card.save();
 
         postCardScene.className = 'hidden';
         communityGardenScene.className = 'showing';
-        document.body.style.overflow = 'auto'; // allow scrolling in garden
+        document.body.style.overflow = 'auto';
+        updateNavColor('communityGarden');
         loadCommunityGarden();
-    })
+    });
 
-    // Skip button on postCardScene also goes to community garden
-    const skipPostCardBtn = document.querySelector('#postCardScene .Skip');
+    // -------------------------------------------------------
+    // Skip postCardScene -> communityGarden
+    // -------------------------------------------------------
 
-    skipPostCardBtn.addEventListener('click', function(){
+    document.querySelector('#postCardScene .Skip').addEventListener('click', function(){
         postCardScene.className = 'hidden';
         communityGardenScene.className = 'showing';
         document.body.style.overflow = 'auto';
+        updateNavColor('communityGarden');
         loadCommunityGarden();
-    })
+    });
 
-    // Community Garden: fetch and display all posted cards
+    // -------------------------------------------------------
+    // Community Garden: fetch and render all cards
+    // -------------------------------------------------------
 
     async function loadCommunityGarden() {
         const Card = Parse.Object.extend("Card");
         const query = new Parse.Query(Card);
         query.descending("createdAt");
-
         const cards = await query.find();
 
-        // Clear and re-render
         communityGardenScene.innerHTML = '<h2>See What Others Said</h2>';
 
         if (cards.length === 0) {
@@ -303,8 +341,8 @@
         }
 
         cards.forEach(function(card) {
-            const bgColor = getColorHex(card.get("color"));
-            const stampSrc = stampImages[card.get("stamp")] || 'images/sun.svg';
+            const bgColor   = getColorHex(card.get("color"));
+            const stampSrc  = stampImages[card.get("stamp")] || 'images/sun.svg';
             const darkColors = ['black', 'purple'];
             const textColor = darkColors.includes(card.get("color")) ? 'white' : '#343434';
 
@@ -312,7 +350,6 @@
             cardEl.classList.add('gardenCard');
             cardEl.style.backgroundColor = bgColor;
             cardEl.style.color = textColor;
-
             cardEl.innerHTML = `
                 <div class="gardenCardLeft">
                     <p>To: ${card.get("toName") || '—'}</p>
@@ -323,7 +360,6 @@
                     <p>${card.get("message") || ''}</p>
                 </div>
             `;
-
             communityGardenScene.appendChild(cardEl);
         });
     }

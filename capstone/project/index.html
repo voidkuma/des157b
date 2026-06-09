@@ -5,43 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smell the Roses</title>
 
-
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barrio&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&family=Domine:wght@400..700&family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Martian+Mono:wght@100..800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
     <!-- my script -->
-     <script src="https://unpkg.com/typeit@8.8.7/dist/index.umd.js"></script>
-     <script src="https://unpkg.com/parse/dist/parse.min.js"></script>
-     <script src="script.js" defer></script>
+    <script src="https://unpkg.com/typeit@8.8.7/dist/index.umd.js"></script>
+    <script src="https://unpkg.com/parse/dist/parse.min.js"></script>
+    <script src="script.js" defer></script>
 
     <!-- my stylesheet -->
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
 
+    <nav id="globalNav">
+        <span id="navHomeBtn">HOME</span>
+        <span id="navGardenBtn">COMMUNITY GARDEN</span>
+    </nav>
+
     <main>
 
         <div id="openingScene" class="showing">
-            <nav>
-                <a>ABOUT</a>
-                <a>COMMUNITY GARDEN</a>
-            </nav>
             <section id="openingContent">
-
                 <h1>Stop and smell the roses</h1>
-                <h4 id="startBtn">[Click here to take a break and reflect on the troubles of the screen]</h4>     
-
+                <h4 id="startBtn">[Click here to take a break and reflect on the troubles of the screen]</h4>
             </section>
 
             <img src="images/yellowFlower.svg" alt="yellow flower" id="yellowFlower">
             <img src="images/pinkFlower.svg" alt="pink flower" id="pinkFlower">
-
         </div>
 
         <!-- Question 1 -->
-
         <div id="question1" class="hidden">
             <div>
                 <div id="progressBar">
@@ -62,19 +58,16 @@
                 <button id="option3">I wish I spent much less time on my phone.</button>
                 <button id="option4">I haven't really thought about it.</button>
             </div>
-
         </div>
 
         <!-- Reflection 1 -->
         <div id="reflectScene1" class="hidden">
-
             <div id="reflection">
                 <h4 id="reflectTotal1">responses</h4>
                 <h1>90% of others feel that way</h1>
                 <h2>No matter where you are today, it's never too late to make time for the moments that matter.</h2>
             </div>
-            <button class="continue" id="continueReflect1" >Continue</button>
-            
+            <button class="continue" id="continueReflect1">Continue</button>
         </div>
 
         <!-- Question #2 -->
@@ -98,19 +91,16 @@
                 <button id="option3">Within the last week</button>
                 <button id="option4">I can't remember</button>
             </div>
-
         </div>
 
         <!-- Reflection #2 -->
         <div id="reflectScene2" class="hidden">
-
             <div id="reflection">
                 <h4 id="reflectTotal2">responses</h4>
                 <h1>90% of others feel that way</h1>
                 <h2>A small break can be enough to reconnect with yourself, your surroundings, or someone you care about.</h2>
             </div>
-            <button class="continue" id="continueReflect2" >Continue</button>
-
+            <button class="continue" id="continueReflect2">Continue</button>
         </div>
 
         <!-- Question #3 -->
@@ -134,58 +124,41 @@
                 <button id="option3">Relaxing on my own</button>
                 <button id="option4">I'm not sure</button>
             </div>
-
         </div>
 
         <!-- Reflection #3 -->
         <div id="reflectScene3" class="hidden">
-
             <div id="reflection">
                 <h4 id="reflectTotal3">responses</h4>
                 <h1>90% of others feel that way</h1>
                 <h2>Reconnecting doesn't have to be a big change. Sometimes it starts with a single moment away from the screen.</h2>
             </div>
-            <button class="continue" id="continueReflect3" >Continue</button>
-
+            <button class="continue" id="continueReflect3">Continue</button>
         </div>
 
         <div id="smellRosesScene" class="hidden">
             <section id="smellRosesContent">
                 <h1>Smell The Roses</h1>
-                <p>Avoiding a screen can feel impossible these days. Sometimes it may seem like it’s hard to give yourself a break and time to reconnect with yourself and others around you. </p>
+                <p>Avoiding a screen can feel impossible these days. Sometimes it may seem like it's hard to give yourself a break and time to reconnect with yourself and others around you.</p>
                 <button>Take a Moment</button>
             </section>
             <img id="treeFlower" src="images/treeFlowers.svg" alt="tree and flowers">
             <img id="treeBush" src="images/treeBush.svg" alt="tree and bush">
             <img id="sun" src="images/sun.svg" alt="sun">
-
         </div>
 
         <div id="neverLateScene" class="hidden">
-            <nav>
-                <a href="#">ABOUT</a>
-                <a href="#">COMMUNITY GARDEN</a>
-            </nav>
             <div id="neverLateContent">
                 <section>
-                    <h4>It’s never too late to reconnect</h4>
-                    <p>Reconnecting doesn’t have to be complicated. Whether it’s spending time with friends, reaching out to someone you care about, or simply enjoying a moment for yourself, there are countless ways to step away from the screen and be present.</p>
+                    <h4>It's never too late to reconnect</h4>
+                    <p>Reconnecting doesn't have to be complicated. Whether it's spending time with friends, reaching out to someone you care about, or simply enjoying a moment for yourself, there are countless ways to step away from the screen and be present.</p>
                 </section>
                 <button id="getStartedBtn">Get Started</button>
             </div>
 
-            <div id="gif1">
-
-            </div>
-
-            <div id="gif2">
-
-            </div>
-
-            <div id="gif3">
-
-            </div>
-
+            <div id="gif1"></div>
+            <div id="gif2"></div>
+            <div id="gif3"></div>
         </div>
 
         <div id="makeCardScene" class="hidden">
@@ -217,12 +190,12 @@
                     </section>
 
                     <section>
-                        <h3>Who’s it to? (optional)</h3>
+                        <h3>Who's it to? (optional)</h3>
                         <input type="text" placeholder="Name here...">
                     </section>
 
                     <section>
-                        <h3>What’s your name? (optional)</h3>
+                        <h3>What's your name? (optional)</h3>
                         <input type="text" placeholder="Your name here...">
                     </section>
 
@@ -230,20 +203,17 @@
                         <h3>Write your message!</h3>
                         <input type="text" placeholder="Your message here...">
                     </section>
-
                 </div>
             </div>
             <div class="buttonSet">
                 <button class="Skip">Skip</button>
                 <button class="Save" id="saveCard">Save</button>
             </div>
-
-
         </div>
 
         <div id="postCardScene" class="hidden">
             <header>
-                <h2>You’re Awesome!</h2>
+                <h2>You're Awesome!</h2>
                 <h3>Now send this card to someone you love and/or share it to the world to see!</h3>
             </header>
             <div id="card">
@@ -254,23 +224,21 @@
                     </div>
                     <img class="chosenStamp" src="images/sun.svg" alt="chosen user Stamp">
                 </div>
-
                 <div id="cardRightHalf">
                     <p id="cardMessage">Miss you man, let's hangout</p>
                 </div>
             </div>
             <div class="buttonSet">
                 <button class="Skip">Skip</button>
-                <button class="Save" id="postCard">Post</button>    
+                <button class="Save" id="postCard">Post</button>
             </div>
         </div>
 
         <div id="communityGarden" class="hidden">
-            <h2>See What others said</h2>
-
+            <h2>See What Others Said</h2>
         </div>
 
     </main>
-    
+
 </body>
 </html>

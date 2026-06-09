@@ -1,101 +1,128 @@
 body {
-  margin: 0;
-  overflow: hidden;
+    margin: 0;
+    overflow: hidden;
 }
 
-main{
-  width: 100%;
-  min-height: 100vh;
-
+main {
+    width: 100%;
+    min-height: 100vh;
 }
+
+/* -------------------------------------------------------
+   Visibility
+------------------------------------------------------- */
 
 .showing {
     opacity: 100%;
 }
 
-#question1.showing {
+/* Questions and reflections need display:flex when showing */
+#question1.showing,
+#question2.showing,
+#question3.showing,
+#reflectScene1.showing,
+#reflectScene2.showing,
+#reflectScene3.showing {
     display: flex;
 }
 
-#reflectScene1.showing {
-    display: flex;
-}
-
-.hidden{
+.hidden {
     display: none !important;
 }
 
+/* -------------------------------------------------------
+   Global fixed nav
+------------------------------------------------------- */
 
-/* First scene, the opening scene */
-
-#openingScene {
-  background-color: white;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-nav{
+#globalNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    box-sizing: border-box;
+    z-index: 100;
 }
 
-nav a{
-    text-decoration: none;
+#globalNav span {
     color: #343434;
     font-family: "Martian Mono";
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
+    cursor: pointer;
 }
 
-/* Header and h2 */
+#globalNav span:hover {
+    color: grey;
+}
+
+/* White text on dark scenes */
+#globalNav.light-text span {
+    color: white;
+}
+
+#globalNav.light-text span:hover {
+    color: #aaaaaa;
+}
+
+/* -------------------------------------------------------
+   Opening scene
+------------------------------------------------------- */
+
+#openingScene {
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+
 #openingContent {
-  width: 100%;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
-#openingContent h1{
+#openingContent h1 {
     margin: 0px;
     color: #343434;
     font-family: Barrio;
     font-size: 64px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-#openingContent h4{
+#openingContent h4 {
     color: #343434;
     text-align: center;
     font-family: "Ubuntu Mono";
     font-size: 20px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin: 0px;
 }
 
-#startBtn:hover{
+#startBtn:hover {
     color: grey;
     cursor: pointer;
 }
 
-#yellowFlower{
+#yellowFlower {
     position: absolute;
     height: 100%;
     top: 9%;
     right: 72%;
 }
 
-#pinkFlower{
+#pinkFlower {
     background-position: center;
     height: 40%;
     position: absolute;
@@ -103,28 +130,31 @@ nav a{
     right: 2%;
 }
 
-/* Questions */
+/* -------------------------------------------------------
+   Questions
+------------------------------------------------------- */
 
 #question1, #question2, #question3 {
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0px;
-  background-color: #232323;
-  gap: 76px;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0px 20px 0px;
+    box-sizing: border-box;
+    background-color: #232323;
+    gap: 76px;
 }
 
-#progressBar{
+#progressBar {
     display: flex;
     gap: 16px;
     justify-content: center;
     padding-bottom: 22px;
 }
 
-#progressBar div{
+#progressBar div {
     background-color: transparent;
     width: 40px;
     height: 40px;
@@ -133,11 +163,11 @@ nav a{
     border-color: #81807F;
 }
 
-#progressBar div.active{
-   background-color: white; 
+#progressBar div.active {
+    background-color: white;
 }
 
-#question{
+#question {
     text-align: center;
     color: white;
     display: flex;
@@ -145,19 +175,17 @@ nav a{
     gap: 22px;
 }
 
-#question h1{
+#question h1 {
     font-family: "Domine";
     font-size: 64px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin: 0px;
 }
 
-#question h2{
+#question h2 {
     font-family: "DM Sans";
     font-size: 24px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin: 0px;
@@ -169,7 +197,7 @@ nav a{
     gap: 42px;
 }
 
-.MCQ button{
+.MCQ button {
     width: 408px;
     height: 48px;
     color: white;
@@ -177,29 +205,34 @@ nav a{
     border-style: none;
     font-family: 'Economica';
     font-size: 24px;
+    cursor: pointer;
 }
 
-.MCQ button:hover{
+.MCQ button:hover {
     background-color: white;
     color: #024466;
     border-style: solid;
     border-color: #024466;
 }
 
-/* Reflections */
+/* -------------------------------------------------------
+   Reflections
+------------------------------------------------------- */
 
 #reflectScene1, #reflectScene2, #reflectScene3 {
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 144px;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 144px;
+    padding-top: 60px;
+    box-sizing: border-box;
 }
 
-#reflection{
+#reflection {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -209,47 +242,53 @@ nav a{
     margin: 0px 20%;
 }
 
-#reflection h1{
+#reflection h4 {
+    font-family: "DM Sans";
+    font-size: 18px;
+    font-weight: 400;
+    color: #81807F;
+    margin: 0px;
+}
+
+#reflection h1 {
     color: #000;
     font-family: "DM Serif Display";
     font-size: 64px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin: 0px;
 }
 
-#reflection h2{
+#reflection h2 {
     font-family: "DM Sans";
     font-size: 24px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin: 0px;
 }
 
-/* Reflection continue buttons */
-
-.continue{
+.continue {
     background-color: #024466;
     height: 49px;
     width: 398px;
     color: white;
     font-family: 'Economica';
     font-size: 24px;
+    cursor: pointer;
 }
 
-.continue:hover{
+.continue:hover {
     background-color: white;
     color: #024466;
     border-style: solid;
     border-color: #024466;
 }
 
+/* -------------------------------------------------------
+   Smell Roses scene
+------------------------------------------------------- */
 
-/* Smell roses scene */
-
-#smellRosesScene{
+#smellRosesScene {
     width: 100%;
     height: 100vh;
     margin: 0;
@@ -259,7 +298,7 @@ nav a{
     align-items: center;
 }
 
-#smellRosesContent{
+#smellRosesContent {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -267,26 +306,24 @@ nav a{
     z-index: 1;
 }
 
-#smellRosesContent h1{
+#smellRosesContent h1 {
     font-family: 'Domine';
     font-size: 64px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin: 0px;
 }
 
-#smellRosesContent p{
+#smellRosesContent p {
     width: 629px;
     text-align: center;
     font-family: "DM Sans";
     font-size: 20px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-#smellRosesContent button{
+#smellRosesContent button {
     width: 314px;
     height: 37px;
     border-style: none;
@@ -294,51 +331,54 @@ nav a{
     color: white;
     font-family: 'Economica';
     font-size: 32px;
+    cursor: pointer;
 }
 
-#smellRosesContent button:hover{
+#smellRosesContent button:hover {
     background-color: white;
     color: #024466;
     border-style: solid;
     border-color: #024466;
 }
 
-#treeFlower{
+#treeFlower {
     position: absolute;
     left: 1%;
     bottom: 0%;
 }
 
-#treeBush{
+#treeBush {
     position: absolute;
     right: 1%;
     bottom: 0%;
 }
 
-#sun{
+#sun {
     position: absolute;
     bottom: -30%;
     animation: riseUp 3s ease-in forwards;
 }
 
-@keyframes riseUp{
-    from{
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-360%);
-    } 
+@keyframes riseUp {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-360%); }
 }
 
-#neverLateScene{
+/* -------------------------------------------------------
+   Never Late scene
+------------------------------------------------------- */
+
+#neverLateScene {
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 40%;
+    padding-top: 60px;
+    box-sizing: border-box;
 }
 
-#neverLateContent{
+#neverLateContent {
     margin: 0px 20%;
     display: flex;
     flex-direction: column;
@@ -346,64 +386,67 @@ nav a{
     gap: 48px;
 }
 
-#neverLateContent h4{
+#neverLateContent h4 {
     font-family: 'DM Serif Display';
     font-size: 32px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin: 0px;
     text-align: center;
 }
 
-#neverLateContent p{
+#neverLateContent p {
     text-align: justify;
     font-family: "DM Sans";
     font-size: 20px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     width: 600px;
 }
 
-#getStartedBtn{
+#getStartedBtn {
     width: 314px;
     height: 37px;
     border-style: none;
     background-color: #024466;
     color: white;
     font-family: 'Economica';
-    font-size: 32px;   
+    font-size: 32px;
+    cursor: pointer;
 }
 
-#getStartedBtn:hover{
+#getStartedBtn:hover {
     background-color: white;
     color: #024466;
     border-style: solid;
-    border-color: #024466; 
+    border-color: #024466;
 }
 
-/* Card Creation Scene */
+/* -------------------------------------------------------
+   Card Creation scene
+------------------------------------------------------- */
 
-#makeCardScene{
+#makeCardScene {
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 8%;
     font-family: 'Martian Mono';
+    padding-top: 60px;
+    box-sizing: border-box;
 }
 
-#makeCardScene h2{
+#makeCardScene h2 {
     font-family: Domine;
     font-size: 32px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-align: center;
+    margin: 0px;
 }
 
-#makeCardContainer{
+#makeCardContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -411,76 +454,66 @@ nav a{
     font-family: 'Martian Mono';
 }
 
-#userCardCreation{
+#userCardCreation {
     display: flex;
     flex-direction: column;
     gap: 18px;
 }
 
-#userCardCreation h3{
+#userCardCreation h3 {
     margin: 0px;
     font-weight: normal;
     font-size: 16px;
 }
 
-#userCardCreation section{
+#userCardCreation section {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-#mushroomTxt{
+#mushroomTxt {
     display: flex;
     flex-direction: column;
     gap: 24px;
     width: min-content;
 }
 
-#mushroomTxt img{
+#mushroomTxt img {
     width: 412.902px;
     height: 237.876px;
 }
 
-#colors{
+#colors {
     display: flex;
-    gap: 8px;  
+    gap: 8px;
 }
 
-#colors div{
+#colors div {
     width: 44px;
     height: 44px;
     padding: 4px;
     border-style: solid;
     border-color: transparent;
     border-width: 1px;
+    cursor: pointer;
 }
 
-#colors div:hover{
+#colors div:hover {
     box-shadow: 2px 2px rgb(133, 133, 133);
 }
 
-#black{
-    background-color: black;
-}
+#black  { background-color: black; }
+#red    { background-color: #E75B5D; }
+#purple { background-color: #7D72AE; }
+#green  { background-color: #9FC490; }
 
-#red{
-    background-color: #E75B5D;
-} 
-
-#purple{
-    background-color: #7D72AE;
-}
-
-#green{
-    background-color: #9FC490;
-}
-
-#stamps{
+#stamps {
     display: flex;
     gap: 8px;
 }
 
-#stamps div{
+#stamps div {
     width: 44px;
     height: 44px;
     display: flex;
@@ -490,49 +523,54 @@ nav a{
     border: #0000001f;
     border-style: groove;
     border-width: 1px;
+    cursor: pointer;
 }
 
-#stamps div:hover{
+#stamps div:hover {
     box-shadow: 2px 2px rgb(133, 133, 133);
 }
 
-.selected{
+.selected {
     box-shadow: 2px 2px rgb(133, 133, 133);
 }
 
-.buttonSet{
+.buttonSet {
     display: flex;
     justify-content: space-around;
     gap: 100px;
 }
 
-.Skip{
+.Skip {
     width: 314px;
     height: 60px;
     background-color: white;
     color: #024466;
     border-style: solid;
-    border-color: #024466; 
+    border-color: #024466;
+    cursor: pointer;
 }
 
-.Save{
+.Save {
     width: 314px;
     height: 60px;
     background-color: #024466;
     color: white;
     border-style: solid;
-    border-color: #024466; 
+    border-color: #024466;
+    cursor: pointer;
 }
 
-.Save:hover{
+.Save:hover {
     background-color: white;
     color: #024466;
-    border-color: #024466; 
+    border-color: #024466;
 }
 
-/* postCardScene */
+/* -------------------------------------------------------
+   Post Card scene
+------------------------------------------------------- */
 
-#postCardScene{
+#postCardScene {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -540,28 +578,28 @@ nav a{
     justify-content: center;
     align-items: center;
     gap: 10%;
+    padding-top: 60px;
+    box-sizing: border-box;
 }
 
-#postCardScene h2{
+#postCardScene h2 {
     font-family: 'Domine';
     font-size: 32px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-align: center;
 }
 
-#postCardScene h3{
+#postCardScene h3 {
     color: #000;
     text-align: center;
     font-family: "DM Sans";
     font-size: 20px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-#card{
+#card {
     display: flex;
     border-style: solid;
     border-width: 4px;
@@ -570,19 +608,21 @@ nav a{
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.chosenStamp{
+.chosenStamp {
     width: 200px;
     padding: 16px;
 }
 
-#cardRightHalf{
+#cardRightHalf {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
 }
 
-/* Community Garden */
+/* -------------------------------------------------------
+   Community Garden
+------------------------------------------------------- */
 
 #communityGarden {
     width: 100%;
@@ -591,14 +631,13 @@ nav a{
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    padding: 40px 0 80px 0;
+    padding: 80px 0 80px 0;
     box-sizing: border-box;
 }
 
 #communityGarden h2 {
-    font-family: 'Domine';
+    font-family: 'Barrio';
     font-size: 32px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-align: center;
