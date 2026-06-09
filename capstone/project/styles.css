@@ -24,6 +24,7 @@ main {
 #reflectScene2.showing,
 #reflectScene3.showing {
     display: flex;
+    position: relative;
 }
 
 .hidden {
@@ -215,6 +216,25 @@ main {
     border-color: #024466;
 }
 
+#bigMushroomIMG{
+    position: absolute;
+    left: 1%;
+    bottom: -7%;
+    rotate: 23deg;
+}
+
+#bigOrangePinkIMG{
+    position: absolute;
+    bottom: -1%;
+    right: 1%;
+}
+
+#bigWhiteFlowerIMG{
+    position: absolute;
+    left: 1%;
+    bottom: 0%;
+}
+
 /* -------------------------------------------------------
    Reflections
 ------------------------------------------------------- */
@@ -363,7 +383,7 @@ main {
 
 @keyframes riseUp {
     from { transform: translateY(0); }
-    to   { transform: translateY(-360%); }
+    to   { transform: translateY(-400%); }
 }
 
 /* -------------------------------------------------------
@@ -444,7 +464,7 @@ main {
 }
 
 #colors div:hover {
-    box-shadow: 2px 2px rgb(133, 133, 133);
+    box-shadow: 4px 4px rgb(133, 133, 133);
 }
 
 #black  { background-color: black; }
@@ -471,11 +491,11 @@ main {
 }
 
 #stamps div:hover {
-    box-shadow: 2px 2px rgb(133, 133, 133);
+    box-shadow: 4px 4px rgb(133, 133, 133);
 }
 
 .selected {
-    box-shadow: 2px 2px rgb(133, 133, 133);
+    box-shadow: 4px 4px rgb(133, 133, 133);
 }
 
 .buttonSet {
@@ -525,7 +545,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10%;
+    gap: 20px;
     padding-top: 60px;
     box-sizing: border-box;
 }
@@ -584,7 +604,7 @@ main {
 }
 
 #communityGarden h2 {
-    font-family: 'Domine';
+    font-family: 'Barrio';
     font-size: 32px;
     font-weight: 400;
     line-height: normal;
