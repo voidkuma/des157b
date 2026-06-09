@@ -51,7 +51,7 @@
     // Nav color helper — white text on dark scenes
     // -------------------------------------------------------
 
-    const darkScenes = ['question1', 'question2', 'question3', 'smellRosesScene'];
+    const darkScenes = ['question1', 'question2', 'question3'];
 
     function updateNavColor(sceneId) {
         if (darkScenes.includes(sceneId)) {
@@ -185,23 +185,13 @@
     });
 
     // -------------------------------------------------------
-    // Smell Roses Scene -> neverLateScene
+    // Smell Roses Scene -> makeCardScene
     // -------------------------------------------------------
 
     document.querySelector('#smellRosesScene button').addEventListener('click', function(){
         smellRosesScene.className = 'hidden';
-        neverLateScene.className = 'showing';
-        updateNavColor('neverLateScene');
-    });
-
-    // -------------------------------------------------------
-    // neverLateScene -> makeCardScene
-    // -------------------------------------------------------
-
-    document.querySelector('#getStartedBtn').addEventListener('click', function(){
-        neverLateScene.className = 'hidden';
         cardCreationScene.className = 'showing';
-        updateNavColor('makeCardScene');
+        updateNavColor('neverLateScene');
     });
 
     // -------------------------------------------------------
@@ -325,7 +315,7 @@
         query.descending("createdAt");
         const cards = await query.find();
 
-        communityGardenScene.innerHTML = '<h2>See What Others Said</h2>';
+        communityGardenScene.innerHTML = '<h2>Welcome to the Community Garden</h2>';
 
         if (cards.length === 0) {
             communityGardenScene.innerHTML += '<p class="noCards">No cards yet — be the first!</p>';

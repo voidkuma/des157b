@@ -327,13 +327,13 @@ main {
 
 #smellRosesContent button {
     width: 314px;
-    height: 37px;
     border-style: none;
     background-color: #024466;
     color: white;
     font-family: 'Economica';
     font-size: 32px;
     cursor: pointer;
+    padding: 10px;
 }
 
 #smellRosesContent button:hover {
@@ -364,64 +364,6 @@ main {
 @keyframes riseUp {
     from { transform: translateY(0); }
     to   { transform: translateY(-360%); }
-}
-
-/* -------------------------------------------------------
-   Never Late scene
-------------------------------------------------------- */
-
-#neverLateScene {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 40%;
-    padding-top: 60px;
-    box-sizing: border-box;
-}
-
-#neverLateContent {
-    margin: 0px 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 48px;
-}
-
-.neverLateHeading {
-    font-family: 'DM Serif Display';
-    font-size: 32px;
-    font-weight: 400;
-    line-height: normal;
-    margin: 0px;
-    text-align: center;
-}
-
-#neverLateContent p {
-    text-align: justify;
-    font-family: "DM Sans";
-    font-size: 20px;
-    font-weight: 400;
-    line-height: normal;
-    width: 600px;
-}
-
-#getStartedBtn {
-    width: 314px;
-    height: 37px;
-    border-style: none;
-    background-color: #024466;
-    color: white;
-    font-family: 'Economica';
-    font-size: 32px;
-    cursor: pointer;
-}
-
-#getStartedBtn:hover {
-    background-color: white;
-    color: #024466;
-    border-style: solid;
-    border-color: #024466;
 }
 
 /* -------------------------------------------------------
@@ -550,6 +492,8 @@ main {
     border-style: solid;
     border-color: #024466;
     cursor: pointer;
+    font-family: 'Economica';
+    font-size: 24px;
 }
 
 .Save {
@@ -560,6 +504,8 @@ main {
     border-style: solid;
     border-color: #024466;
     cursor: pointer;
+    font-family: 'Economica';
+    font-size: 24px;
 }
 
 .Save:hover {
