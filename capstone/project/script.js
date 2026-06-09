@@ -30,7 +30,7 @@
     }
 
     // -------------------------------------------------------
-    // Scenes
+    // Scene references
     // -------------------------------------------------------
 
     const openingScene        = document.querySelector('#openingScene');
@@ -122,9 +122,7 @@
         });
     });
 
-    // -------------------------------------------------------
     // Reflection #1 -> Question #2
-    // -------------------------------------------------------
 
     document.querySelector('#continueReflect1').addEventListener('click', function(){
         firstReflection.className = 'hidden';
@@ -151,9 +149,7 @@
         });
     });
 
-    // -------------------------------------------------------
     // Reflection #2 -> Question #3
-    // -------------------------------------------------------
 
     document.querySelector('#continueReflect2').addEventListener('click', function(){
         secondReflection.className = 'hidden';
@@ -180,9 +176,7 @@
         });
     });
 
-    // -------------------------------------------------------
     // Reflection #3 -> Smell Roses Scene
-    // -------------------------------------------------------
 
     document.querySelector('#continueReflect3').addEventListener('click', function(){
         thirdReflection.className = 'hidden';
@@ -311,9 +305,7 @@
         loadCommunityGarden();
     });
 
-    // -------------------------------------------------------
     // Skip postCardScene -> communityGarden
-    // -------------------------------------------------------
 
     document.querySelector('#postCardScene .Skip').addEventListener('click', function(){
         postCardScene.className = 'hidden';
